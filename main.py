@@ -2,7 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 #G = nx.read_pajek("Strike.paj")
-G = nx.read_gml("Dolphins.txt")
+G = nx.read_gml("Dolphins.gml")
 G = nx.Graph(G)
 
 # Controlla i nodi e gli archi
