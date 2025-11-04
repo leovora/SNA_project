@@ -208,3 +208,9 @@ __marimo__/
 
 .idea
 .DS_Store
+
+reports/*.aux
+reports/*.log
+reports/*.fdb_latexmk
+reports/*.fls
+reports/*.synctex.gz
