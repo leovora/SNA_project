@@ -1,0 +1,59 @@
+\subsection{Comparison}
+
+\textbf{General structural metrics}
+\begin{table}[H]
+    \begin{tabular}{c|c|c}
+    Centrality Metric              & Italian Network & London Network \\ \hline
+    Density                        & 0.0516          &                \\
+    Average Degree                 & 3.0430          &                \\
+    Diameter                       & 6               &                \\
+    Average Path Length            & 3.012           &                \\
+    Average Clustering Coefficient & 0.4347          &                \\
+    Number of communities          & 5               &                \\
+    Modularity Score               & 0.5561          &               
+    \end{tabular}
+\end{table}
+\textbf{Centrality Metrics}
+
+\begin{table}[H]
+\begin{tabular}{c|cc|cc}
+\multirow{2}{*}{Centrality Metric}      & \multicolumn{2}{c|}{Italian Network} & \multicolumn{2}{c}{London Network} \\
+                                        & Top 3 nodes         & Value          & Top 3 nodes         & Value        \\ \hline
+\multirow{3}{*}{Degree Centrality}      & N19                 & 0.3182         &                     &              \\
+                                        & N63                 & 0.2879         &                     &              \\
+                                        & N18                 & 0.2727         &                     &              \\ \hline
+\multirow{3}{*}{Betweenness Centrality} & N19                 & 0.5558         &                     &              \\
+                                        & N63                 & 0.3633         &                     &              \\
+                                        & N18                 & 0.2881         &                     &              \\ \hline
+\multirow{3}{*}{Closeness Centrality}   & N19                 & 0.5397         &                     &              \\
+                                        & N63                 & 0.4597         &                     &              \\
+                                        & N18                 & 0.4563         &                     &              \\ \hline
+\multirow{3}{*}{Eigenvector Centrality} & N19                 & 0.4394         &                     &              \\
+                                        & N18                 & 0.3784         &                     &              \\
+                                        & N63                 & 0.3110         &                     &             
+\end{tabular}
+\end{table}
+
+\textbf{Roles and Vulnerability}
+
+\begin{table}[H]
+\begin{tabular}{clcc}
+                               &                              & Italian Network                                                                                                                                                                           & London Network \\
+\multicolumn{2}{c}{Leaders}                                   & N19, N63, N18, N4                                                                                                                                                                         &                \\
+\multicolumn{2}{c}{Brokers}                                   & N19, N63, N18, N47                                                                                                                                                                        &                \\
+\multicolumn{2}{c}{Peripheral}                                & \begin{tabular}[c]{@{}c@{}}N2, N3, N5, N17, N22,\\  N26, N33, N34, N36, N37,\\  N38, N45, N46, N48, N49, \\ N51, N53, N55, N56, N60,\\  N61, N66, N67\end{tabular}                        &                \\
+\multirow{3}{*}{Main core}     & k                            & 3                                                                                                                                                                                         &                \\
+                               & Number of nodes              & 20 (out of 67)                                                                                                                                                                            &                \\
+                               & Nodes in the core            & \begin{tabular}[c]{@{}c@{}}'N4', 'N8', 'N11', 'N12', 'N13', \\ 'N15', 'N18', 'N19', 'N21', 'N24', \\ 'N31', 'N32', 'N39', 'N41', 'N44', \\ 'N47', 'N58', 'N59', 'N63', 'N64'\end{tabular} &                \\
+\multirow{6}{*}{After Removal} & Nodes                        & 24 in the largest component (64 remaining)                                                                                                                                                                         &                \\
+                               & Number of components         & 18                                                                                                                                                                                        &                \\
+                               & Average shortest path length & 3.1341                                                                                                                                                                                    &                \\
+                               & density                      & 0.1014                                                                                                                                                                                    &                \\
+                               & Node reduction               & 64.18\%                                                                                                                                                                                   &                \\
+                               & Increase in average path     & 4.05\%                                                                                                                                                                                    &               
+\end{tabular}
+\end{table}
+
+\begin{table}
+    
+\end{table}
