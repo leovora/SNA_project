@@ -7,21 +7,21 @@ and the properties found?\\
 
 MAYBE WE SHOULD INCLUDE THE MATHEMATICAL FORMULAS OF THE METRICS\\
 
-For both the italian and London gang, we study the same metrics and compare them. In fact, we start by studying \textbf{general structural metrics}. These include: 
+For both the italian and London gang, we study the same metrics and compare them. In fact, we start by studying \textbf{general structural metrics}. These include:
 \begin{itemize}
-    \item density which is the ratio between existing ties and all possible ties and measures cohesian (high density means that communication is easier and that there is lower vulnerability to central node removal); 
-    \item average degree which is defined as the average number of connections per node and indicates member activity and level of engagement; 
-    \item network diameter and average path length which are respectively the maximum and average length of paths between nodes and are able to measure the network's efficiency in transmitting information or orders; 
+    \item density which is the ratio between existing ties and all possible ties and measures cohesian (high density means that communication is easier and that there is lower vulnerability to central node removal);
+    \item average degree which is defined as the average number of connections per node and indicates member activity and level of engagement;
+    \item network diameter and average path length which are respectively the maximum and average length of paths between nodes and are able to measure the network's efficiency in transmitting information or orders;
     \item clustering coefficient which corresponds to the probability that a node's neighbors are connected to each other and highlights closed subgroups or internal "cells", it is useful for understanding resilience and community;
     \item modularity which measures the presence of well-defined internal communities and can reveal internal divisions and possible subgroups or cliques.
 \end{itemize}
 Besides, we study \textbf{centrality metrics}. In particular, we focus on:
 \begin{itemize}
     \item degree centrality which is based on the number of direct connections a node has and is useful to identify the most active or influential members of the network;
-    \item betweeness centrality which is the number of times a node lies on the shortest paths between other nodes and highlights brokers or gatekeepers (nodes critical for the flow of information); 
-    \item closeness centrality which is defined as the reciprocal of the sum of a node's distances to all other nodes. A node close to all others can quickly spread information or orders; 
+    \item betweeness centrality which is the number of times a node lies on the shortest paths between other nodes and highlights brokers or gatekeepers (nodes critical for the flow of information);
+    \item closeness centrality which is defined as the reciprocal of the sum of a node's distances to all other nodes. A node close to all others can quickly spread information or orders;
     \item eigenvector centrality. This metric defines importance by being connected to other important nodes and highlights leaders recognized by the most influential members.
-\end{itemize} 
+\end{itemize}
 
 Finally, we study the roles and vulnerability based on the metrics calculated previously we aim to identify key roles like leader, broker and peripheral members. We use a combination of centrality, degree, betweeness and clustering to identify who in the network leads, mediates between subgroups and remains peripheral.\\
 
@@ -31,10 +31,10 @@ We also study the k-core and core-periphery structure to inspect implicit hierar
 
 We study the cohesion and network robustness by studying metrics like density, average path length and k-core decompostion in a network where the central nodes have been removed and compare them to the values of the original network to study the impact of removing central nodes. \\
 
-At last, in order to explore how ethnic background influences the internal structure of both the Italian and London gang networks, 
+At last, in order to explore how ethnic background influences the internal structure of both the Italian and London gang networks,
 we conduct a series of \textbf{attribute-based network analyses} focusing on the \textit{Birthplace} variable.\\
 
-The objective is to determine whether individuals tend to associate mainly with others of the same national origin 
+The objective is to determine whether individuals tend to associate mainly with others of the same national origin
 ethnic homophily or whether the networks exhibit patterns of cross-ethnic integration.
 
 We use the following key-metrics:
@@ -45,19 +45,19 @@ We use the following key-metrics:
     \item \textbf{Centrality measures (degree, betweenness, eigenvector)}: to identify whether specific ethnic groups occupy more central or influential structural positions in the network.
 
     \item \textbf{Community composition and diversity}: communities were detected using a modularity-based algorithm, and their ethnic heterogeneity was assessed through the \textbf{Shannon Diversity Index} (H), which measures the balance and variety of nationalities within each community.
-    To quantify this diversity, the Shannon index was computed as:
-    \[
-        H = - \sum_i p_i \log(p_i)
-    \]
-    where $p_i$ represents the proportion of members from group $i$ within a community. 
-    Higher $H$ values indicate more ethnically diverse communities.
+          To quantify this diversity, the Shannon index was computed as:
+          \[
+              H = - \sum_i p_i \log(p_i)
+          \]
+          where $p_i$ represents the proportion of members from group $i$ within a community.
+          Higher $H$ values indicate more ethnically diverse communities.
 
     \item \textbf{Inter-group connectivity}: calculated as the proportion of edges linking individuals of different \textit{Birthplace} categories, indicating the level of cross-ethnic interaction.
 
     \item \textbf{Subgraph analysis by Birthplace}: used to evaluate the internal cohesion of each nationality group in terms of network density and clustering coefficient.
 \end{itemize}
 
-It is worth noting that the italian network is not connected, and therefore the network diameter and average path length are calculated for the largest connected component of the network. This is also true when we remove the central nodes. 
+It is worth noting that the italian network is not connected, and therefore the network diameter and average path length are calculated for the largest connected component of the network. This is also true when we remove the central nodes.
 
 
 

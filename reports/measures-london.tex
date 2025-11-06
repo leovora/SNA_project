@@ -1,30 +1,131 @@
 \subsection{London gang}
+This section will report the results of the metrics mentioned in \ref{measures} regarding the London gang network 54 nodes, 315 edges.
 
-\subsubsection{Structural analysis}
+In figure \ref{fig:london_net} a plot of the network is shown where each node is colored according to its birthplace label.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/london_network.png}
+    \caption{London Network graph visualization. Each node is colored according to its birthplace label}
+    \label{fig:london_net}
+\end{figure}
+
+\subsubsection{Macro-level Cohesion and Structure}
+These measures assess the overall "connectedness" and efficiency of the network as a whole.
+
+% The ‘X’ column expands to fill the space and allows text wrapping.
+\begin{tabularx}{\linewidth}{@{} l l X @{}}
+    \toprule
+    \textbf{Metric}        & \textbf{Result} & \textbf{Interpretation (What it means)}                                                       \\
+    \midrule
+    Density                & 0.2201          & The network is extremely dense and highly interconnected.                                     \\
+    Average Degree         & 11.67           & On average, each member is connected to almost 12 others.                                     \\
+    Average Path Length    & 2.05            & Any two members can reach each other in just 2 "hops" on average.                             \\
+    Diameter               & 4               & The maximum separation between any two members is 4 "hops".                                   \\
+    Avg. Clustering Coeff. & 0.6331          & The network is rich in tightly-knit local subgroups (cliques).                                \\
+    Modularity             & 0.2665          & The network operates as a single, cohesive bloc; it is not fragmented into separate factions. \\
+    \bottomrule
+\end{tabularx}
+
+\subsubsection{Micro-level Centrality and Social Roles}
+These measures identify the most important nodes, allowing us to define social roles.
+
+\paragraph{Leaders} The most influential, connected, and central members.
+\begin{table}[H] % Contenitore tabella
+    \centering
+    \begin{tabular}{r r r r r}
+        \toprule
+        \textbf{Node} & \textbf{Degree} & \textbf{Betweenness} & \textbf{Closeness} & \textbf{Eigenvector} \\
+        \midrule
+        1             & 0.4717          & 0.1087               & 0.6543             & 0.2367               \\
+        7             & 0.4717          & 0.0755               & 0.6543             & 0.2433               \\
+        12            & 0.4717          & 0.0596               & 0.6386             & 0.2494               \\
+        \bottomrule
+    \end{tabular}
+    \caption{Leader nodes (Degree $\ge$ 0.4594 \& Eigenvector $\ge$ 0.2357)} \label{tab:leaders}
+\end{table}
+
+\paragraph{Brokers} Members who act as "bridges" connecting different parts of the network.
+\begin{table}[H] % Contenitore tabella
+    \centering
+    \begin{tabular}{r r r r r}
+        \toprule
+        \textbf{Node} & \textbf{Degree} & \textbf{Betweenness} & \textbf{Closeness} & \textbf{Eigenvector} \\
+        \midrule
+        1             & 0.4717          & 0.1087               & 0.6543             & 0.2367               \\
+        7             & 0.4717          & 0.0755               & 0.6543             & 0.2433               \\
+        4             & 0.3962          & 0.0725               & 0.6163             & 0.1747               \\
+        \bottomrule
+    \end{tabular}
+    \caption{Broker nodes (Betweenness $\ge$ 0.0670)} \label{tab:brokers}
+\end{table}
+
+\paragraph{Peripheral Members} Marginal members with few connections, existing on the network's edges.
+\begin{table}[H] % Contenitore tabella
+    \centering
+    \begin{tabular}{r r r r r}
+        \toprule
+        \textbf{Node} & \textbf{Degree} & \textbf{Betweenness} & \textbf{Closeness} & \textbf{Eigenvector} \\
+        \midrule
+        38            & 0.0377          & 0.0000               & 0.4109             & 0.0256               \\
+        39            & 0.0377          & 0.0000               & 0.3926             & 0.0258               \\
+        40            & 0.0377          & 0.0000               & 0.3557             & 0.0107               \\
+        45            & 0.0377          & 0.0000               & 0.4015             & 0.0164               \\
+        50            & 0.0377          & 0.0000               & 0.3557             & 0.0107               \\
+        53            & 0.0377          & 0.0003               & 0.3681             & 0.0088               \\
+        \bottomrule
+    \end{tabular}
+    \caption{Peripheral nodes (Degree $\le$ 0.0377)} \label{tab:peripheral}
+\end{table}
+
+\subsubsection{Hierarchy and Vulnerability}
+These measures test the power structure and resilience of the network.
+
+\paragraph{K-Core Decomposition}
+The most densely connected "core" of the network is identified.  The analysis reveals a main core with a \textbf{k-value of 11}. This core consists of \textbf{13 nodes} (out of 54). The nodes in this core are: \texttt{[1, 2, 7, 8, 9, 10, 11, 12, 21, 22, 23, 25, 29]}.
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/london_network_core.png}
+    \caption{Core of London Network graph visualization.}
+    \label{fig:london_core_net}
+\end{figure}
+
+\paragraph{Vulnerability Simulation}
+We simulated the removal of the identified leaders (Nodes 1, 7, 12), representing a \textbf{5.56\% reduction in nodes}, and recalculated cohesion metrics. This measure connects roles (leaders) to cohesion (robustness). The results show the network is \textbf{extremely robust}: removing the top 3 leaders did not fragment the network (it remained connected). The network density was reduced to \textbf{0.1906}, and the average path length increased to \textbf{2.2180} (an \textbf{8.00\%} increase). The high density and clustering create redundancy, making the network resilient to targeted attacks.
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/london_network_vuln.png}
+    \caption{London Network sub-graph visualization without leaders.}
+    \label{fig:london_net_vuln}
+\end{figure}
+
+\subsubsection{Synthesis: Connection Between Data, Measures, and Properties}
+
+The \textbf{properties} are what we discovered: a "small-world" network (path length 2.05), highly cohesive (density 0.22), locally clustered (clustering 0.63), but undivided (modularity 0.26). It possesses a clear hierarchy (k-core 11) and defined social roles (Leaders 1, 7, 12), all of which combine to make it exceptionally \textbf{robust}.
 
 \subsubsection{Ethnicity analysis}
 
 The analysis of the London gang network shows a \textbf{weak but positive tendency toward ethnic homophily}, with an assortativity coefficient of 0.113. This indicates that individuals display a mild preference for forming ties with others sharing the same \textit{Birthplace}, although the overall network remains relatively integrated. \\
 
-The \textbf{mixing matrix} confirms this observation: diagonal values (particularly for groups 1 and 3) are slightly higher, indicating intra-group cohesion, while off-diagonal entries remain substantial. This balance highlights the presence 
+The \textbf{mixing matrix} confirms this observation: diagonal values (particularly for groups 1 and 3) are slightly higher, indicating intra-group cohesion, while off-diagonal entries remain substantial. This balance highlights the presence
 of numerous \textbf{cross-ethnic connections} within the gang’s structure. \\
 
 \begin{table}[H]
-\centering
-\caption{Mixing matrix (proportion of connections between Birthplace groups) – London gang}
-\label{tab:mixing_matrix_london}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
- & 1 & 2 & 3 & 4 \\ \hline
-1 & 0.111 & 0.060 & 0.076 & 0.041 \\ 
-2 & 0.060 & 0.073 & 0.076 & 0.025 \\ 
-3 & 0.076 & 0.076 & 0.146 & 0.043 \\ 
-4 & 0.041 & 0.025 & 0.043 & 0.025 \\ 
-\hline
-\end{tabular}
+    \centering
+    \caption{Mixing matrix (proportion of connections between Birthplace groups) – London gang}
+    \label{tab:mixing_matrix_london}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+          & 1     & 2     & 3     & 4     \\ \hline
+        1 & 0.111 & 0.060 & 0.076 & 0.041 \\
+        2 & 0.060 & 0.073 & 0.076 & 0.025 \\
+        3 & 0.076 & 0.076 & 0.146 & 0.043 \\
+        4 & 0.041 & 0.025 & 0.043 & 0.025 \\
+        \hline
+    \end{tabular}
 \end{table}
 
-When analyzing \textbf{centrality measures}, groups 1 and 4 emerge as the most central and 
+When analyzing \textbf{centrality measures}, groups 1 and 4 emerge as the most central and
 structurally influential, with the highest mean degrees (0.286 and 0.267 respectively) and eigenvector centralities (0.152 and 0.135). Group 2 follows closely, while group 3 (despite being the largest) exhibits the lowest centrality values, suggesting a more peripheral or clustered role. This pattern implies that influence and connectivity are distributed across multiple ethnic groups, rather than concentrated in a single one. \\
 
 \begin{figure}[H]
@@ -33,51 +134,51 @@ structurally influential, with the highest mean degrees (0.286 and 0.267 respect
     \label{fig:london_centrality}
 \end{figure}
 
-The \textbf{community analysis} identified four main communities, each with different degrees of 
+The \textbf{community analysis} identified four main communities, each with different degrees of
 ethnic diversity. Community 0 displays a relatively balanced composition (1: 38\%, 2: 10\%, 3: 29\%, 4: 24\%), while community 1 is dominated by groups 2 and 3. Communities 2 and 3 are less diverse, with community 2 almost entirely composed of group 3 members. The mean Shannon diversity index ($H = 0.886$) indicates moderate internal diversity, slightly lower than in the Italian network. \\
 
 \begin{table}[H]
-\centering
-\caption{Community composition by Birthplace – London gang}
-\label{tab:community_composition_london}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-Community & 1 & 2 & 3 & 4 \\ \hline
-0 & 0.38 & 0.10 & 0.29 & 0.24 \\ 
-1 & 0.20 & 0.35 & 0.40 & 0.05 \\ 
-2 & 0.00 & 0.14 & 0.86 & 0.00 \\ 
-3 & 0.00 & 0.33 & 0.67 & 0.00 \\ 
-\hline
-\end{tabular}
+    \centering
+    \caption{Community composition by Birthplace – London gang}
+    \label{tab:community_composition_london}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Community & 1    & 2    & 3    & 4    \\ \hline
+        0         & 0.38 & 0.10 & 0.29 & 0.24 \\
+        1         & 0.20 & 0.35 & 0.40 & 0.05 \\
+        2         & 0.00 & 0.14 & 0.86 & 0.00 \\
+        3         & 0.00 & 0.33 & 0.67 & 0.00 \\
+        \hline
+    \end{tabular}
 \end{table}
 
-Furthermore, 64.44\% of all connections occur between individuals of different 
-\textit{Birthplace} categories, demonstrating a high degree of cross-ethnic integration. 
+Furthermore, 64.44\% of all connections occur between individuals of different
+\textit{Birthplace} categories, demonstrating a high degree of cross-ethnic integration.
 As in the Italian case, national origin does not appear to be a key organizing principle in the network’s structure. \\
 
 Subgraph analysis by \textit{Birthplace} provides additional insight:
 \begin{itemize}
-    \item Groups \textbf{1} and \textbf{4} exhibit the highest internal density (0.530 and 0.533 respectively) 
-    and clustering, indicating strong intra-group cohesion.
-    \item Group \textbf{3}, while the largest (24 nodes), has a lower internal density (0.167), 
-    suggesting looser internal connectivity and a more outward orientation.
-    \item Group \textbf{2} shows intermediate density (0.348) and clustering, forming connections both 
-    internally and across groups.
+    \item Groups \textbf{1} and \textbf{4} exhibit the highest internal density (0.530 and 0.533 respectively)
+          and clustering, indicating strong intra-group cohesion.
+    \item Group \textbf{3}, while the largest (24 nodes), has a lower internal density (0.167),
+          suggesting looser internal connectivity and a more outward orientation.
+    \item Group \textbf{2} shows intermediate density (0.348) and clustering, forming connections both
+          internally and across groups.
 \end{itemize}
 
 \begin{table}[H]
-\centering
-\caption{Subgraph-level statistics by Birthplace – London gang}
-\label{tab:subgraph_london}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-Birthplace & Nodes & Edges & Density & Clustering \\ \hline
-1 & 12 & 35 & 0.530 & 0.658 \\ 
-2 & 12 & 23 & 0.348 & 0.636 \\ 
-3 & 24 & 46 & 0.167 & 0.506 \\ 
-4 & 6 & 8 & 0.533 & 0.722 \\ 
-\hline
-\end{tabular}
+    \centering
+    \caption{Subgraph-level statistics by Birthplace – London gang}
+    \label{tab:subgraph_london}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Birthplace & Nodes & Edges & Density & Clustering \\ \hline
+        1          & 12    & 35    & 0.530   & 0.658      \\
+        2          & 12    & 23    & 0.348   & 0.636      \\
+        3          & 24    & 46    & 0.167   & 0.506      \\
+        4          & 6     & 8     & 0.533   & 0.722      \\
+        \hline
+    \end{tabular}
 \end{table}
 
 \begin{figure}[H]
@@ -86,7 +187,7 @@ Birthplace & Nodes & Edges & Density & Clustering \\ \hline
     \label{fig:london_subgraphs}
 \end{figure}
 
-In summary, the London gang network displays slightly lower diversity but comparable integration when compared to the Italian case. While certain groups form cohesive internal clusters, 
-the overall structure is characterized by extensive cross-ethnic linkage and 
-distributed influence across national backgrounds. 
+In summary, the London gang network displays slightly lower diversity but comparable integration when compared to the Italian case. While certain groups form cohesive internal clusters,
+the overall structure is characterized by extensive cross-ethnic linkage and
+distributed influence across national backgrounds.
 Ethnicity, therefore, plays only a minor role in shaping the gang’s internal connectivity patterns.
