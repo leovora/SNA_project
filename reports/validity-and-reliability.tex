@@ -1,11 +1,10 @@
 \section{Validity and Reliability}
 \label{validity-and-reliability-not-needed-for-the-project-proposal}
 
-How closely does the model of your dataset represent reality (validity)?
-How does the way you treat the data affect the reproducibility of the study (reliability)?
+% How closely does the model of your dataset represent reality (validity)?
+% How does the way you treat the data affect the reproducibility of the study (reliability)?
 
-\subsection{London Gang Network Dataset}
-\subsubsection{Validity (Representation of Reality)}
+\subsection{Validity (Representation of Reality)}
 
 The model of the dataset---a graph of 54 nodes and 315 edges---is a structural abstraction of a complex, real-world social system. The validity, or how closely this model represents reality, is subject to several key considerations:
 
@@ -19,14 +18,18 @@ The model of the dataset---a graph of 54 nodes and 315 edges---is a structural a
 
 In summary, the model is a valid (as it is academically vetted) but simplified, static, and unweighted representation of the network's topology, not a complete or dynamic reflection of its real-world social complexity.
 
-\subsubsection{Reliability (Reproducibility)}
+\subsection{Reliability (Reproducibility)}
 
-The reliability of this study---the ability for another researcher to reproduce the exact same results---is \textbf{high}. This is ensured by the methodology used to treat the data:
+The reliability of this study (the ability for another researcher to reproduce the exact same results) is \textbf{high}. This is ensured by the methodology used to treat the data:
 
 \begin{itemize}[itemsep=0.5ex]
-    \item \textbf{Public Data:} The dataset was sourced from a stable, public, and citable URL. Any researcher can access the exact same source file (\texttt{LONDON\_GANG.csv}), eliminating data collection as a variable.
+    \item \textbf{Public Data:} The dataset was sourced from a stable, public, and citable URL. Any researcher can access the exact same source files in \cite{16-UCINetLondonGang} \cite{17-UCINetItalianGangs}.
 
     \item \textbf{Open-Source, Deterministic Tools:} The entire analysis was conducted using open-source Python libraries (\texttt{pandas} and \texttt{NetworkX}). The functions used for calculating measures (\texttt{nx.density}, \texttt{nx.betweenness\_centrality}, etc.) are deterministic. Given the same input graph, they will produce the identical output every time.
 
     \item \textbf{Transparent Workflow:} The data treatment was minimal and explicit: loading the CSV via \texttt{pandas}, handling indices, converting it to a \texttt{NetworkX} graph, and applying specific functions. This step-by-step process can be scripted and shared, ensuring perfect reproducibility.
 \end{itemize}
+
+Overall, while the datasets provide only partial depictions of real-world social structures, the analytical process applied to them is transparent, stable, and highly reproducible.
+
+
