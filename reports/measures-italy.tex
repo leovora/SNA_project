@@ -13,6 +13,116 @@ In figure \ref{fig:italian_net} a plot of the network is shown where each node i
     \caption{Italian Network graph visualization. Each node is colored according to its country label}
     \label{fig:italian_net}
 \end{figure}
+\subsubsection{Macro-level Cohesion and Structure}
+
+\begin{tabularx}{\linewidth}{@{} l l >{\raggedright\arraybackslash}X @{}}
+  \toprule
+  \textbf{Metric} & \textbf{Result} & \textbf{Interpretation (What it means)} \\
+  \midrule
+  Density & 0.0516 & About 5\% of all possible connections exist, so the network is fairly sparse. \\
+  Average Degree & 3.0430 & On average, each member is connected to 3 others. \\
+  Average Path Length & 3.012 & Any two members can reach each other in about 3 "hops" on average. \\
+  Diameter & 6 & The maximum separation between any two members is 6 "hops". \\
+  Avg. Clustering Coeff. & 0.4347 & Members’ friends are often friends with each other—around 43\% of possible “triangles” are closed—showing moderate local cohesion. \\
+  Modularity & 0.5561 & The network splits into well-defined communities; there are many more connections within groups than between them. \\
+  \bottomrule
+\end{tabularx}
+\subsubsection{Micro-level Centrality and Social Roles}
+These measures identify the most important nodes, allowing us to define social roles.
+
+\paragraph{Leaders} The most influential, connected, and central members.
+
+\begin{table}[H] 
+    \centering
+    \begin{tabular}{r r r r r}
+        \toprule
+        \textbf{Node} & \textbf{Degree} & \textbf{Betweenness} & \textbf{Closeness} & \textbf{Eigenvector} \\
+        \midrule
+        19             & 0.3182          & 0.5558               & 0.5397             & 0.4394               \\
+        63             & 0.2879          & 0.3633               & 0.4597             & 0.3110               \\
+        18            & 0.2727          & 0.2881              & 0.4563             & 0.3784               \\
+        \bottomrule
+    \end{tabular}
+    \caption{Leader nodes (Degree $\ge$ 0.1621 \& Eigenvector $\ge$ 0.2542)} \label{tab:leaders}
+\end{table}
+
+
+\paragraph{Brokers} Members who act as "bridges" connecting different parts of the network.
+\begin{table}[H] % Contenitore tabella
+    \centering
+    \begin{tabular}{r r r r r}
+        \toprule
+        \textbf{Node} & \textbf{Degree} & \textbf{Betweenness} & \textbf{Closeness} & \textbf{Eigenvector} \\
+        \midrule
+        19             & 0.3182          & 0.5558               & 0.5397             & 0.4394               \\
+        63             & 0.2879          & 0.3633               & 0.4597             & 0.3110               \\
+        18            & 0.2727          & 0.2881              & 0.4563             & 0.3784               \\
+        47 &  0.1515 & 0.1396 & 0.4280 & 0.2177 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Broker nodes (Betweenness $\ge$ 0.1369)} \label{tab:brokers}
+\end{table}
+
+\paragraph{Peripheral Members} Marginal members with few connections, existing on the network's edges.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{r r r r r}
+        \toprule
+        \textbf{Node} & \textbf{Degree} & \textbf{Betweenness} & \textbf{Closeness} & \textbf{Eigenvector} \\
+        \midrule
+        2 & 0.0152 & 0.0000 & 0.0000 \\
+        3 & 0.0152 & 0.0132 & 0.0000 \\
+        5 & 0.0152 & 0.0556 & 0.0000 \\
+        17 & 0.0152 & 0.0141 & 0.0000 \\
+        22 & 0.0152 & 0.0645 & 0.0000 \\
+        26 & 0.0152 & 0.0384 & 0.0000 \\
+        33 & 0.0152 & 0.0179 & 0.0000 \\
+        34 & 0.0152 & 0.0140 & 0.0000 \\
+        36 & 0.0152 & 0.0349 & 0.0000 \\
+        37 & 0.0152 & 0.0179 & 0.0000 \\
+        38 & 0.0152 & 0.0645 & 0.0000 \\
+        45 & 0.0152 & 0.0132 & 0.0000 \\
+        46 & 0.0152 & 0.0000 & 0.0000 \\
+        48 & 0.0152 & 0.0457 & 0.0000 \\
+        49 & 0.0152 & 0.0556 & 0.0000 \\
+        51 & 0.0152 & 0.0117 & 0.0000 \\
+        53 & 0.0152 & 0.0645 & 0.0000 \\
+        55 & 0.0152 & 0.0457 & 0.0000 \\
+        56 & 0.0152 & 0.0384 & 0.0000 \\
+        60 & 0.0152 & 0.0645 & 0.0000 \\
+        61 & 0.0152 & 0.0349 & 0.0000 \\
+        66 & 0.0152 & 0.0069 & 0.0000 \\
+        67 & 0.0152 & 0.0556 & 0.0000 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Peripheral nodes (Degree $\le$ 0.0152)} \label{tab:peripheral}
+\end{table}
+
+\subsubsection{Hierarchy and Vulnerability}
+These measures test the power structure and resilience of the network.
+
+\paragraph{K-Core Decomposition}
+The most densely connected "core" of the network is identified.  The analysis reveals a main core with a \textbf{k-value of 3}. This core consists of \textbf{20 nodes} (out of 63). The nodes in this core are: \texttt{[4, 8, 11, 12, 13, 15, 18, 19, 21, 24, 31, 32, 39, 41, 44, 47, 58, 59, 63, 64]}.
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/italian_network_core.png}
+    \caption{Core of Italian Network graph visualization.}
+    \label{fig:italian_core_net}
+\end{figure}
+
+\paragraph{Vulnerability Simulation}
+We simulated the removal of the identified leaders (Nodes 19, 63, 18),
+and recalculated cohesion metrics. This measure connects roles (leaders) to cohesion (robustness). 
+The network density was reduced to \textbf{0.1014}, and the average path length increased to \textbf{3.1341} (an \textbf{4.05\%} increase), indicating marginally longer communication chains and reduced efficiency.
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/italian_net_vuln.png}
+    \caption{Italian Network sub-graph visualization without leaders.}
+    \label{fig:italian_net_vuln}
+\end{figure}
+
+\subsubsection{Synthesis: Connection Between Data, Measures, and Properties}
+The \textbf{Italian gang network} is sparse but moderately cohesive, with clear community divisions and a defined inner core (\textbf{k = 3}). Leadership is concentrated in a few nodes (19, 63, 18), supported by brokers who link subgroups. When these leaders are removed, the network becomes \textbf{fragmented}, revealing limited redundancy and a \textbf{moderate structural vulnerability} despite its local cohesion.
 
 \subsubsection{Ethnicity analysis}
 
