@@ -1,23 +1,18 @@
 \section{Datasets}
 \label{datasets}
 
-How did you gather the data? Did you digitise it? How? Is the material
-publicly available? What tools did you use 1) to handle (store,
-manipulate) the data and 2) to compute measures on the data?
+% How did you gather the data? Did you digitise it? How? Is the material
+% publicly available? What tools did you use 1) to handle (store,
+% manipulate) the data and 2) to compute measures on the data?
 
-\subsection{London Gang Network Dataset}
-The primary dataset used for this analysis is the \textbf{London Gang Network}. The data was gathered from a public academic repository widely used for social network analysis, hosted by the UCINET Software project.
+\subsection{Gang Network Datasets and Processing}
 
-The material is publicly available and was accessed from the following URL: \footnote{\url{https://sites.google.com/site/ucinetsoftware/datasets/covert-networks/london-gang}}.
+Our analysis uses two publicly available datasets from the UCINET Software project’s repository of social networks: the \textbf{London Gang Network} (54\,nodes) and the \textbf{Italian Gangs Network} (67\,nodes). The London dataset was accessed from the UCINET “Covert Networks” collection\footnote{\url{https://sites.google.com/site/ucinetsoftware/datasets/covert-networks/london-gang}}; the Italian dataset was obtained from the same repository. Both include person–person adjacency matrices and accompanying node-attribute tables, and are fully digitised, requiring no manual transcription.
 
 \subsubsection{Digitisation and Data Handling}
 
-The dataset was already available in a digital format; no manual digitization was required. For the purpose of this study, the data was formatted as a CSV file (\texttt{LONDON\_GANG.csv}), representing the adjacency matrix of the network (comprising 54 nodes).
-A corresponding attribute file, \texttt{LONDON\_GANG\_ATTR.csv}, provides node-level data for each member. These attributes include \texttt{Age}, \texttt{Birthplace}, \texttt{Residence}, \texttt{Arrests}, \texttt{Convictions}, \texttt{Prison}, \texttt{Music}, and \texttt{Ranking}. For the purpose of this study, only the \textbf{Birthplace} attribute was utilized. This decision was based on it being the sole common attribute available for both the London network and the Italian network.
-For \textbf{1) handling and manipulating} the data, the \textbf{Python} programming language was used, specifically the \textbf{\texttt{pandas}} library. The \texttt{pandas.read\_csv} function was employed to load the adjacency matrix into a DataFrame structure.
+For this study, each adjacency matrix was stored in CSV format (\texttt{LONDON\_GANG.csv} with a 54\,$\times$\,54 matrix; \texttt{ITALIAN\_GANGS.csv} with a 67\,$\times$\,67 matrix). The London attributes file (\texttt{LONDON\_GANG\_ATTR.csv}) lists \texttt{Age}, \texttt{Birthplace}, \texttt{Residence}, \texttt{Arrests}, \texttt{Convictions}, \texttt{Prison}, \texttt{Music}, and \texttt{Ranking}; the Italian attributes file (\texttt{ITALIAN\_GANGS\_ATTR.csv}) includes \texttt{Nationality/Country of origin}. To enable cross-network comparisons, we used only a harmonised birthplace variable (London \texttt{Birthplace}; Italian \texttt{Nationality/Country of origin}). Data handling was performed in \textbf{Python} with \textbf{\texttt{pandas}}, using \texttt{pandas.read\_csv} to load matrices and attributes into \texttt{DataFrame}s.
 
 \subsubsection{Computing Measures}
 
-For \textbf{2) computing measures} on the data, the Python library \textbf{\texttt{NetworkX}} was used.
-
-The \texttt{pandas} DataFrame (containing the adjacency matrix) was converted into a \texttt{NetworkX} graph object using the \texttt{nx.from\_pandas\_adjacency} function. This graph object then served as the foundation for computing all measures.
+Network measures were computed with \textbf{\texttt{NetworkX}}. The adjacency \texttt{DataFrame}s were converted into graph objects via \texttt{nx.from\_pandas\_adjacency}, which then served as the basis for all subsequent analyses and visualisations.
