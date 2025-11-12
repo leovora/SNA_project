@@ -5,14 +5,13 @@
 % publicly available? What tools did you use 1) to handle (store,
 % manipulate) the data and 2) to compute measures on the data?
 
-\subsection{Gang Network Datasets and Processing}
 
-Our analysis uses two publicly available datasets from the UCINET Software project’s repository of social networks: the \textbf{London Gang Network} (54\,nodes) and the \textbf{Italian Gangs Network} (67\,nodes). The London dataset was accessed from the UCINET “Covert Networks” collection \cite{16-UCINetLondonGang}; the Italian dataset was obtained from the same repository \cite{17-UCINetItalianGangs}. Both include person–person adjacency matrices and accompanying node-attribute tables, and are fully digitised, requiring no manual transcription.
+Our analysis uses two publicly available datasets from the UCINET Software project’s repository of social networks: the \textbf{London Gang Network} (54\,nodes) and the \textbf{Italian Gangs Network} (67\,nodes). The London dataset was accessed from the UCINET “Covert Networks” collection \cite{londonGangSite}; the Italian dataset was obtained from the same repository \cite{italianGangsSite}. Both include person–person adjacency matrices and accompanying node-attribute tables, and are fully digitised, requiring no manual transcription.
 
-\subsubsection{Digitisation and Data Handling}
+\subsection{Digitisation and Data Handling}
 
 For this study, each adjacency matrix was stored in CSV format (\texttt{LONDON\_GANG.csv} with a 54\,$\times$\,54 matrix; \texttt{ITALIAN\_GANGS.csv} with a 67\,$\times$\,67 matrix). The London attributes file (\texttt{LONDON\_GANG\_ATTR.csv}) lists \texttt{Age}, \texttt{Birthplace}, \texttt{Residence}, \texttt{Arrests}, \texttt{Convictions}, \texttt{Prison}, \texttt{Music}, and \texttt{Ranking}; the Italian attributes file (\texttt{ITALIAN\_GANGS\_ATTR.csv}) includes \texttt{Nationality/Country of origin}. To enable cross-network comparisons, we used only a harmonised birthplace variable (London \texttt{Birthplace}; Italian \texttt{Nationality/Country of origin}). Data handling was performed in \textbf{Python} with \textbf{\texttt{pandas}}, using \texttt{pandas.read\_csv} to load matrices and attributes into \texttt{DataFrame}s.
 
-\subsubsection{Computing Measures}
+\subsection{Computing Measures}
 
 Network measures were computed with \textbf{\texttt{NetworkX}}. The adjacency \texttt{DataFrame}s were converted into graph objects via \texttt{nx.from\_pandas\_adjacency}, which then served as the basis for all subsequent analyses and visualisations.

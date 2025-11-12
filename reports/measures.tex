@@ -5,59 +5,114 @@
 % they relate to the intent of the study? Why are they relevant? What is the connection among the gathered data, the applied measures,
 % and the properties found?\\
 
-MAYBE WE SHOULD INCLUDE THE MATHEMATICAL FORMULAS OF THE METRICS\\
+For both the Italian and London gangs, we study the same network metrics and compare them. We start by analyzing \textbf{general structural metrics}, which quantify the overall organization and efficiency of the network:
 
-For both the italian and London gang, we study the same metrics and compare them. In fact, we start by studying \textbf{general structural metrics}. These include:
+\subsection*{General Structural Metrics}
+
 \begin{itemize}
-    \item density which is the ratio between existing ties and all possible ties and measures cohesian (high density means that communication is easier and that there is lower vulnerability to central node removal);
-    \item average degree which is defined as the average number of connections per node and indicates member activity and level of engagement;
-    \item network diameter and average path length which are respectively the maximum and average length of paths between nodes and are able to measure the network's efficiency in transmitting information or orders;
-    \item clustering coefficient which corresponds to the probability that a node's neighbors are connected to each other and highlights closed subgroups or internal "cells", it is useful for understanding resilience and community;
-    \item modularity which measures the presence of well-defined internal communities and can reveal internal divisions and possible subgroups or cliques.
+    \item \textbf{Density ($D$)}: measures how many ties exist in the network compared to the maximum possible number.
+          \begin{equation}
+              D = \frac{2m}{n(n-1)}
+          \end{equation}
+          where $m$ is the number of existing edges and $n$ the number of nodes. High density indicates strong cohesion and low vulnerability to node removal.
+
+    \item \textbf{Average degree ($\langle k \rangle$)}: the mean number of connections per node.
+          \begin{equation}
+              \langle k \rangle = \frac{1}{n}\sum_{i=1}^{n} k_i = \frac{2m}{n}
+          \end{equation}
+          It represents member activity and overall engagement.
+
+    \item \textbf{Network diameter ($D_{max}$)} and \textbf{average path length ($\ell$)}: respectively, the maximum and the mean of the shortest path distances between all node pairs.
+          \begin{equation}
+              \ell = \frac{1}{n(n-1)} \sum_{i \neq j} d_{ij}
+          \end{equation}
+          They describe the efficiency of information or order transmission within the network.
+
+    \item \textbf{Clustering coefficient ($C$)}: expresses the probability that two neighbors of a node are connected, revealing local cohesion or closed ``cells''.
+          For node $i$:
+          \begin{equation}
+              C_i = \frac{2t_i}{k_i(k_i - 1)}
+          \end{equation}
+          where $t_i$ is the number of triangles passing through $i$. The overall clustering coefficient is the average of $C_i$ across all nodes:
+          \begin{equation}
+              C = \frac{1}{n} \sum_{i=1}^{n} C_i
+          \end{equation}
+
+    \item \textbf{Modularity ($Q$)}: quantifies the presence of well-defined communities:
+          \begin{equation}
+              Q = \frac{1}{2m}\sum_{i,j}\left(A_{ij} - \frac{k_i k_j}{2m}\right)\delta(c_i, c_j)
+          \end{equation}
+          where $\delta(c_i, c_j)=1$ if nodes $i$ and $j$ belong to the same community. High $Q$ indicates strong internal divisions or cliques.
 \end{itemize}
-Besides, we study \textbf{centrality metrics}. In particular, we focus on:
+
+\subsection*{Centrality Metrics}
+
+We also compute \textbf{centrality metrics}, which identify key actors based on different notions of importance:
+
 \begin{itemize}
-    \item degree centrality which is based on the number of direct connections a node has and is useful to identify the most active or influential members of the network;
-    \item betweeness centrality which is the number of times a node lies on the shortest paths between other nodes and highlights brokers or gatekeepers (nodes critical for the flow of information);
-    \item closeness centrality which is defined as the reciprocal of the sum of a node's distances to all other nodes. A node close to all others can quickly spread information or orders;
-    \item eigenvector centrality. This metric defines importance by being connected to other important nodes and highlights leaders recognized by the most influential members.
+    \item \textbf{Degree centrality ($C_D(i)$)}: number of direct ties a node has.
+          \begin{equation}
+              C_D(i) = k_i
+          \end{equation}
+          It reveals the most active or visible members.
+
+    \item \textbf{Betweenness centrality ($C_B(i)$)}: measures how often a node lies on the shortest paths between others.
+          \begin{equation}
+              C_B(i) = \sum_{s \neq i \neq d} \frac{\sigma_{sd}(i)}{\sigma_{sd}}
+          \end{equation}
+          where $\sigma_{sd}$ is the number of shortest paths between $s$ and $d$, and $\sigma_{sd}(i)$ those passing through $i$. It highlights brokers or gatekeepers.
+
+    \item \textbf{Closeness centrality ($C_C(i)$)}: reciprocal of the mean distance from a node to all others.
+          \begin{equation}
+              C_C(i) = \frac{n-1}{\sum_{j\neq i} d_{ij}}
+          \end{equation}
+          Nodes with high $C_C$ can quickly disseminate information.
+
+    \item \textbf{Eigenvector centrality ($C_E(i)$)}: assigns importance based on being connected to other important nodes.
+          \begin{equation}
+              C_E(i) = \frac{1}{\kappa}\sum_{j=1}^{n} A_{ij} C_E(j)
+          \end{equation}
+          where $\kappa$ is the largest eigenvalue of the adjacency matrix $A$. It identifies leaders recognized by other influential members.
 \end{itemize}
 
-Finally, we study the roles and vulnerability based on the metrics calculated previously we aim to identify key roles like leader, broker and peripheral members. We use a combination of centrality, degree, betweeness and clustering to identify who in the network leads, mediates between subgroups and remains peripheral.\\
+\subsection*{Roles and Network Hierarchy}
 
-We define leaders as the nodes that have both degree and eigenvector centrality values among the top 5\% of all nodes: leaders are both broadly connected (high degree) and well positioned near other influential nodes (high eigenvector). Brokers are those that fall within the top 5\% for betweenness centrality, meaning they often act as bridges between different parts of the network. Peripherals are nodes in the bottom 5\% for degree centrality, indicating that they have few connections and limited influence within the network.\\
-
-We also study the k-core and core-periphery structure to inspect implicit hierarchy and concentration of power. A k-core is the part of the network where every node has at least k connections to other nodes within that part. We computed core numbers for all nodes and identified the main core - the highest k that still has nodes. The main core has k equal to the maximum core number in the network, and we report how many nodes it contains (out of the total) and list which nodes belong to it.”\\
-
-We study the cohesion and network robustness by studying metrics like density, average path length and k-core decompostion in a network where the central nodes have been removed and compare them to the values of the original network to study the impact of removing central nodes. \\
-
-At last, in order to explore how ethnic background influences the internal structure of both the Italian and London gang networks,
-we conduct a series of \textbf{attribute-based network analyses} focusing on the \textit{Birthplace} variable.\\
-
-The objective is to determine whether individuals tend to associate mainly with others of the same national origin
-ethnic homophily or whether the networks exhibit patterns of cross-ethnic integration.
-
-We use the following key-metrics:
+Based on these metrics, we classify network roles as follows:
 
 \begin{itemize}
-    \item \textbf{Assortativity coefficient and mixing matrix}: to quantify the extent of homophily by \textit{Birthplace} and to visualize how frequently connections occur within or between different nationality groups.
+    \item \textbf{Leaders}: nodes in the top 5\% for both degree and eigenvector centrality, broadly connected and influential.
+    \item \textbf{Brokers}: nodes in the top 5\% for betweenness, key intermediaries between subgroups.
+    \item \textbf{Peripherals}: nodes in the bottom 5\% for degree, few connections and limited influence.
+\end{itemize}
 
-    \item \textbf{Centrality measures (degree, betweenness, eigenvector)}: to identify whether specific ethnic groups occupy more central or influential structural positions in the network.
+We further analyze the \textbf{$k$-core decomposition} to inspect hierarchical structure and power concentration.
+A $k$-core is a maximal subgraph where each node has degree $\geq k$.
+The \textit{main core} corresponds to the highest $k$ with non-empty core.
 
-    \item \textbf{Community composition and diversity}: communities were detected using a modularity-based algorithm, and their ethnic heterogeneity was assessed through the \textbf{Shannon Diversity Index} (H), which measures the balance and variety of nationalities within each community.
-          To quantify this diversity, the Shannon index was computed as:
-          \[
+We also assess \textbf{network robustness} by comparing metrics (density, average path length, $k$-core) before and after removing central nodes, in order to study the structural impact of node removal.
+
+\subsection*{Attribute-based Network Analysis}
+
+Finally, to explore how ethnic background shapes internal organization, we perform \textbf{attribute-based network analyses} based on the \textit{Birthplace} attribute.
+
+\begin{itemize}
+    \item \textbf{Assortativity coefficient ($r$)} and \textbf{mixing matrix}: measure homophily by birthplace.
+          \begin{equation}
+              r = \frac{\sum_i e_{ii} - \sum_i a_i b_i}{1 - \sum_i a_i b_i}
+          \end{equation}
+          where $e_{ij}$ is the fraction of edges linking group $i$ to $j$, and $a_i$, $b_i$ are the row and column sums of the mixing matrix.
+
+    \item \textbf{Centrality by group}: comparing average degree, betweenness, and eigenvector centrality across ethnic categories reveals whether certain groups occupy more central positions.
+
+    \item \textbf{Community composition and diversity}: community detection via modularity maximization; ethnic heterogeneity measured with the \textbf{Shannon Diversity Index}:
+          \begin{equation}
               H = - \sum_i p_i \log(p_i)
-          \]
-          where $p_i$ represents the proportion of members from group $i$ within a community.
-          Higher $H$ values indicate more ethnically diverse communities.
+          \end{equation}
+          where $p_i$ is the proportion of members from group $i$ within a community. Higher $H$ values indicate more diverse communities.
 
-    \item \textbf{Inter-group connectivity}: calculated as the proportion of edges linking individuals of different \textit{Birthplace} categories, indicating the level of cross-ethnic interaction.
+    \item \textbf{Inter-group connectivity}: proportion of edges linking individuals of different birthplace categories — indicating cross-ethnic integration.
 
-    \item \textbf{Subgraph analysis by Birthplace}: used to evaluate the internal cohesion of each nationality group in terms of network density and clustering coefficient.
+    \item \textbf{Subgraph analysis by birthplace}: evaluation of intra-group cohesion through internal density and clustering coefficient.
 \end{itemize}
 
-It is worth noting that the italian network is not connected, and therefore the network diameter and average path length are calculated for the largest connected component of the network. This is also true when we remove the central nodes.
-
-
-
+\textit{Note:} Since the Italian network is disconnected, metrics such as diameter and average path length are computed on the largest connected component, including cases where central nodes are removed.

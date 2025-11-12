@@ -16,31 +16,31 @@ In figure \ref{fig:italian_net} a plot of the network is shown where each node i
 \subsubsection{Macro-level Cohesion and Structure}
 
 \begin{tabularx}{\linewidth}{@{} l l >{\raggedright\arraybackslash}X @{}}
-  \toprule
-  \textbf{Metric} & \textbf{Result} & \textbf{Interpretation (What it means)} \\
-  \midrule
-  Density & 0.0516 & About 5\% of all possible connections exist, so the network is fairly sparse. \\
-  Average Degree & 3.0430 & On average, each member is connected to 3 others. \\
-  Average Path Length & 3.012 & Any two members can reach each other in about 3 "hops" on average. \\
-  Diameter & 6 & The maximum separation between any two members is 6 "hops". \\
-  Avg. Clustering Coeff. & 0.4347 & Members’ friends are often friends with each other—around 43\% of possible “triangles” are closed—showing moderate local cohesion. \\
-  Modularity & 0.5561 & The network splits into well-defined communities; there are many more connections within groups than between them. \\
-  \bottomrule
+    \toprule
+    \textbf{Metric}        & \textbf{Result} & \textbf{Interpretation (What it means)}                                                                                            \\
+    \midrule
+    Density                & 0.0516          & About 5\% of all possible connections exist, so the network is fairly sparse.                                                      \\
+    Average Degree         & 3.0430          & On average, each member is connected to 3 others.                                                                                  \\
+    Average Path Length    & 3.012           & Any two members can reach each other in about 3 "hops" on average.                                                                 \\
+    Diameter               & 6               & The maximum separation between any two members is 6 "hops".                                                                        \\
+    Avg. Clustering Coeff. & 0.4347          & Members’ friends are often friends with each other—around 43\% of possible “triangles” are closed—showing moderate local cohesion. \\
+    Modularity             & 0.5561          & The network splits into well-defined communities; there are many more connections within groups than between them.                 \\
+    \bottomrule
 \end{tabularx}
 \subsubsection{Micro-level Centrality and Social Roles}
 These measures identify the most important nodes, allowing us to define social roles.
 
 \paragraph{Leaders} The most influential, connected, and central members.
 
-\begin{table}[H] 
+\begin{table}[H]
     \centering
     \begin{tabular}{r r r r r}
         \toprule
         \textbf{Node} & \textbf{Degree} & \textbf{Betweenness} & \textbf{Closeness} & \textbf{Eigenvector} \\
         \midrule
-        19             & 0.3182          & 0.5558               & 0.5397             & 0.4394               \\
-        63             & 0.2879          & 0.3633               & 0.4597             & 0.3110               \\
-        18            & 0.2727          & 0.2881              & 0.4563             & 0.3784               \\
+        19            & 0.3182          & 0.5558               & 0.5397             & 0.4394               \\
+        63            & 0.2879          & 0.3633               & 0.4597             & 0.3110               \\
+        18            & 0.2727          & 0.2881               & 0.4563             & 0.3784               \\
         \bottomrule
     \end{tabular}
     \caption{Leader nodes (Degree $\ge$ 0.1621 \& Eigenvector $\ge$ 0.2542)} \label{tab:leaders}
@@ -54,10 +54,10 @@ These measures identify the most important nodes, allowing us to define social r
         \toprule
         \textbf{Node} & \textbf{Degree} & \textbf{Betweenness} & \textbf{Closeness} & \textbf{Eigenvector} \\
         \midrule
-        19             & 0.3182          & 0.5558               & 0.5397             & 0.4394               \\
-        63             & 0.2879          & 0.3633               & 0.4597             & 0.3110               \\
-        18            & 0.2727          & 0.2881              & 0.4563             & 0.3784               \\
-        47 &  0.1515 & 0.1396 & 0.4280 & 0.2177 \\
+        19            & 0.3182          & 0.5558               & 0.5397             & 0.4394               \\
+        63            & 0.2879          & 0.3633               & 0.4597             & 0.3110               \\
+        18            & 0.2727          & 0.2881               & 0.4563             & 0.3784               \\
+        47            & 0.1515          & 0.1396               & 0.4280             & 0.2177               \\
         \bottomrule
     \end{tabular}
     \caption{Broker nodes (Betweenness $\ge$ 0.1369)} \label{tab:brokers}
@@ -70,30 +70,30 @@ These measures identify the most important nodes, allowing us to define social r
         \toprule
         \textbf{Node} & \textbf{Degree} & \textbf{Betweenness} & \textbf{Closeness} & \textbf{Eigenvector} \\
         \midrule
-        2 & 0.0152 & 0.0000 & 0.0152 & 0.0000 \\
-        3 & 0.0152 & 0.0000 & 0.2443 & 0.0132 \\
-        5 & 0.0152 & 0.0000 & 0.3119 & 0.0556 \\
-        17 & 0.0152 & 0.0000 & 0.2463 & 0.0141 \\
-        22 & 0.0152 & 0.0000 & 0.3487 & 0.0645 \\
-        26 & 0.0152 & 0.0000 & 0.2941 & 0.0384 \\
-        33 & 0.0152 & 0.0000 & 0.2473 & 0.0179 \\
-        34 & 0.0152 & 0.0000 & 0.2619 & 0.0140 \\
-        36 & 0.0152 & 0.0000 & 0.2941 & 0.0349 \\
-        37 & 0.0152 & 0.0000 & 0.2473 & 0.0179 \\
-        38 & 0.0152 & 0.0000 & 0.3487 & 0.0645 \\
-        45 & 0.0152 & 0.0000 & 0.2443 & 0.0132 \\
-        46 & 0.0152 & 0.0000 & 0.0152 & 0.0000 \\
-        48 & 0.0152 & 0.0000 & 0.3134 & 0.0457 \\
-        49 & 0.0152 & 0.0000 & 0.3119 & 0.0556 \\
-        51 & 0.0152 & 0.0000 & 0.2434 & 0.0117 \\
-        53 & 0.0152 & 0.0000 & 0.3487 & 0.0645 \\
-        55 & 0.0152 & 0.0000 & 0.3134 & 0.0457 \\
-        56 & 0.0152 & 0.0000 & 0.2941 & 0.0384 \\
-        60 & 0.0152 & 0.0000 & 0.3487 & 0.0645 \\
-        61 & 0.0152 & 0.0000 & 0.2941 & 0.0349 \\
-        66 & 0.0152 & 0.0000 & 0.2324 & 0.0069 \\
-        67 & 0.0152 & 0.0000 & 0.3119 & 0.0556 \\
-    \bottomrule
+        2             & 0.0152          & 0.0000               & 0.0152             & 0.0000               \\
+        3             & 0.0152          & 0.0000               & 0.2443             & 0.0132               \\
+        5             & 0.0152          & 0.0000               & 0.3119             & 0.0556               \\
+        17            & 0.0152          & 0.0000               & 0.2463             & 0.0141               \\
+        22            & 0.0152          & 0.0000               & 0.3487             & 0.0645               \\
+        26            & 0.0152          & 0.0000               & 0.2941             & 0.0384               \\
+        33            & 0.0152          & 0.0000               & 0.2473             & 0.0179               \\
+        34            & 0.0152          & 0.0000               & 0.2619             & 0.0140               \\
+        36            & 0.0152          & 0.0000               & 0.2941             & 0.0349               \\
+        37            & 0.0152          & 0.0000               & 0.2473             & 0.0179               \\
+        38            & 0.0152          & 0.0000               & 0.3487             & 0.0645               \\
+        45            & 0.0152          & 0.0000               & 0.2443             & 0.0132               \\
+        46            & 0.0152          & 0.0000               & 0.0152             & 0.0000               \\
+        48            & 0.0152          & 0.0000               & 0.3134             & 0.0457               \\
+        49            & 0.0152          & 0.0000               & 0.3119             & 0.0556               \\
+        51            & 0.0152          & 0.0000               & 0.2434             & 0.0117               \\
+        53            & 0.0152          & 0.0000               & 0.3487             & 0.0645               \\
+        55            & 0.0152          & 0.0000               & 0.3134             & 0.0457               \\
+        56            & 0.0152          & 0.0000               & 0.2941             & 0.0384               \\
+        60            & 0.0152          & 0.0000               & 0.3487             & 0.0645               \\
+        61            & 0.0152          & 0.0000               & 0.2941             & 0.0349               \\
+        66            & 0.0152          & 0.0000               & 0.2324             & 0.0069               \\
+        67            & 0.0152          & 0.0000               & 0.3119             & 0.0556               \\
+        \bottomrule
     \end{tabular}
     \caption{Peripheral nodes (Degree $\le$ 0.0152)} \label{tab:peripheral}
 \end{table}
@@ -112,7 +112,7 @@ The most densely connected "core" of the network is identified.  The analysis re
 
 \paragraph{Vulnerability Simulation}
 We simulated the removal of the identified leaders (Nodes 19, 63, 18),
-and recalculated cohesion metrics. This measure connects roles (leaders) to cohesion (robustness). 
+and recalculated cohesion metrics. This measure connects roles (leaders) to cohesion (robustness).
 The network density was reduced to \textbf{0.1014}, and the average path length increased to \textbf{3.1341} (an \textbf{4.05\%} increase), indicating marginally longer communication chains and reduced efficiency.
 \begin{figure} [H]
     \centering
@@ -128,30 +128,30 @@ The \textbf{Italian gang network} is sparse but moderately cohesive, with clear 
 
 The analysis of the Italian gang network shows a \textbf{moderate tendency toward ethnic homophily}, with an assortativity coefficient of 0.150. This value suggests that individuals show a slight preference for connecting with others sharing the same \textit{Birthplace}, though overall the network remains relatively integrated. \\
 
-The \textbf{mixing matrix} confirms this trend: while several diagonal values 
+The \textbf{mixing matrix} confirms this trend: while several diagonal values
 (e.g., for groups 3, 4, and 5) are higher (indicating intra-group cohesion) many off-diagonal entries are also non-negligible. This demonstrates a considerable number of \textbf{cross-national connections}, supporting the idea of partial ethnic mixing.
 
 \begin{table}[H]
-\centering
-\caption{Mean centrality by Birthplace – Italian gang}
-\label{tab:mixing_matrix_italy}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-\hline
- & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
-1 & 0.018 & 0.000 & 0.031 & 0.004 & 0.004 & 0.000 & 0.022 & 0.009 & 0.000 \\ 
-2 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.004 \\ 
-3 & 0.031 & 0.000 & 0.096 & 0.053 & 0.031 & 0.000 & 0.061 & 0.004 & 0.004 \\ 
-4 & 0.004 & 0.000 & 0.053 & 0.228 & 0.013 & 0.009 & 0.035 & 0.000 & 0.004 \\ 
-5 & 0.004 & 0.000 & 0.031 & 0.013 & 0.009 & 0.000 & 0.026 & 0.000 & 0.009 \\ 
-6 & 0.000 & 0.000 & 0.000 & 0.009 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\ 
-7 & 0.022 & 0.000 & 0.061 & 0.035 & 0.026 & 0.000 & 0.000 & 0.000 & 0.000 \\ 
-8 & 0.009 & 0.000 & 0.004 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\ 
-9 & 0.000 & 0.004 & 0.004 & 0.004 & 0.009 & 0.000 & 0.000 & 0.000 & 0.000 \\ 
-\hline
-\end{tabular}
+    \centering
+    \caption{Mean centrality by Birthplace – Italian gang}
+    \label{tab:mixing_matrix_italy}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+          & 1     & 2     & 3     & 4     & 5     & 6     & 7     & 8     & 9     \\ \hline
+        1 & 0.018 & 0.000 & 0.031 & 0.004 & 0.004 & 0.000 & 0.022 & 0.009 & 0.000 \\
+        2 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.004 \\
+        3 & 0.031 & 0.000 & 0.096 & 0.053 & 0.031 & 0.000 & 0.061 & 0.004 & 0.004 \\
+        4 & 0.004 & 0.000 & 0.053 & 0.228 & 0.013 & 0.009 & 0.035 & 0.000 & 0.004 \\
+        5 & 0.004 & 0.000 & 0.031 & 0.013 & 0.009 & 0.000 & 0.026 & 0.000 & 0.009 \\
+        6 & 0.000 & 0.000 & 0.000 & 0.009 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\
+        7 & 0.022 & 0.000 & 0.061 & 0.035 & 0.026 & 0.000 & 0.000 & 0.000 & 0.000 \\
+        8 & 0.009 & 0.000 & 0.004 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\
+        9 & 0.000 & 0.004 & 0.004 & 0.004 & 0.009 & 0.000 & 0.000 & 0.000 & 0.000 \\
+        \hline
+    \end{tabular}
 \end{table}
- 
-When analyzing \textbf{centrality measures}, group 5 clearly stands out as the most central and structurally influential, with the highest mean degree (0.159), betweenness (0.144), and eigenvector centrality (0.233). Groups 3 and 9 also exhibit moderate centrality levels, suggesting participation in brokerage or connective roles. In contrast, groups such as 2, 6, and 7 show minimal centrality values, occupying peripheral positions within the network. 
+
+When analyzing \textbf{centrality measures}, group 5 clearly stands out as the most central and structurally influential, with the highest mean degree (0.159), betweenness (0.144), and eigenvector centrality (0.233). Groups 3 and 9 also exhibit moderate centrality levels, suggesting participation in brokerage or connective roles. In contrast, groups such as 2, 6, and 7 show minimal centrality values, occupying peripheral positions within the network.
 Overall, influence appears somewhat concentrated but not monopolized by a single nationality. \\
 
 \begin{figure}[H]
@@ -160,40 +160,40 @@ Overall, influence appears somewhat concentrated but not monopolized by a single
     \label{fig:placeholder}
 \end{figure}
 
-The \textbf{community analysis} identified five major communities. 
+The \textbf{community analysis} identified five major communities.
 Most of these display mixed ethnic compositions, with only one cluster (community 4) being entirely dominated by two groups (1 and 3). The mean Shannon diversity index ($H = 1.174$) indicates high internal heterogeneity, suggesting that communities are composed of members from multiple national origins rather than segregated along ethnic lines.\\
 
-Furthermore, 64.91\% of all connections occur between individuals of different 
-Birthplace categories, a clear indicator of \textbf{strong cross-ethnic integration}. 
+Furthermore, 64.91\% of all connections occur between individuals of different
+Birthplace categories, a clear indicator of \textbf{strong cross-ethnic integration}.
 This finding supports the interpretation that ethnic background is not a dominant organizing factor in the structure of the Italian gang. \\
 
 Subgraph analysis by \textit{Birthplace} reveals additional information:
 \begin{itemize}
     \item Group \textbf{4} (21 nodes, density = 0.124) forms the largest and most internally cohesive subcommunity.
-    \item Group \textbf{5}, although small (2 nodes), is fully interconnected (density = 1.000), 
-    representing a tightly bonded dyad.
-    \item Other groups (6, 7, 8, 9) show limited or no internal links, implying 
-    \textbf{dependence on inter-ethnic ties} for maintaining connectivity.
+    \item Group \textbf{5}, although small (2 nodes), is fully interconnected (density = 1.000),
+          representing a tightly bonded dyad.
+    \item Other groups (6, 7, 8, 9) show limited or no internal links, implying
+          \textbf{dependence on inter-ethnic ties} for maintaining connectivity.
 \end{itemize}
 
 \begin{table}[H]
-\centering
-\caption{Subgraph-level statistics by Birthplace – Italian gang}
-\label{tab:subgraph_italy}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Country} & \textbf{Nodes} & \textbf{Edges} & \textbf{Density} & \textbf{Clustering} \\ \hline
-1 & 5  & 2  & 0.200 & 0.000 \\ 
-2 & 1  & 0  & 0.000 & 0.000 \\ 
-3 & 15 & 11 & 0.105 & 0.156 \\ 
-4 & 21 & 26 & 0.124 & 0.294 \\ 
-5 & 2  & 1  & 1.000 & 0.000 \\ 
-6 & 1  & 0  & 0.000 & 0.000 \\ 
-7 & 20 & 0  & 0.000 & 0.000 \\ 
-8 & 1  & 0  & 0.000 & 0.000 \\ 
-9 & 1  & 0  & 0.000 & 0.000 \\ 
-\hline
-\end{tabular}
+    \centering
+    \caption{Subgraph-level statistics by Birthplace – Italian gang}
+    \label{tab:subgraph_italy}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Country} & \textbf{Nodes} & \textbf{Edges} & \textbf{Density} & \textbf{Clustering} \\ \hline
+        1                & 5              & 2              & 0.200            & 0.000               \\
+        2                & 1              & 0              & 0.000            & 0.000               \\
+        3                & 15             & 11             & 0.105            & 0.156               \\
+        4                & 21             & 26             & 0.124            & 0.294               \\
+        5                & 2              & 1              & 1.000            & 0.000               \\
+        6                & 1              & 0              & 0.000            & 0.000               \\
+        7                & 20             & 0              & 0.000            & 0.000               \\
+        8                & 1              & 0              & 0.000            & 0.000               \\
+        9                & 1              & 0              & 0.000            & 0.000               \\
+        \hline
+    \end{tabular}
 \end{table}
 
 \begin{figure}[H]
@@ -202,6 +202,6 @@ Subgraph analysis by \textit{Birthplace} reveals additional information:
     \label{fig:placeholder}
 \end{figure}
 
-In summary, the Italian gang exhibits \textbf{moderate homophily but high overall integration}, 
-with collaboration patterns largely transcending national divisions. 
+In summary, the Italian gang exhibits \textbf{moderate homophily but high overall integration},
+with collaboration patterns largely transcending national divisions.
 Ethnicity appears to play a \textbf{secondary role} in shaping relational dynamics.

@@ -20,6 +20,10 @@
 \usepackage{makecell}
 \usepackage{booktabs}
 
+\usepackage{biblatex}
+\addbibresource{articles.bib}
+
+
 \author{Joana Pimenta, MSc in Artificial Intelligence, 0001168774
 \\Name2 Surname2, Degree Programme, ID number (matricola)}
 \date{}
@@ -48,7 +52,12 @@
 
 \include{critique}
 
-\bibliography{sample}
-\bibliographystyle{unsrt}
+
+% --- BIBLIOGRAPHY ---
+\newpage
+\printbibliography[title={References}]
+
+%\bibliography{sample}
+%\bibliographystyle{unsrt}
 
 \end{document}
