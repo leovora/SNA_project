@@ -15,14 +15,16 @@ In figure \ref{fig:italian_net} a plot of the network is shown where each node i
 \end{figure}
 \subsubsection{Macro-level Cohesion and Structure}
 
+As the italian network is not connected and diameter and average path length are not defined for not connected networks, we instead calculate these metrics for the largest connected component, which has 65 nodes (out of 67).
+
 \begin{tabularx}{\linewidth}{@{} l l >{\raggedright\arraybackslash}X @{}}
     \toprule
     \textbf{Metric}        & \textbf{Result} & \textbf{Interpretation (What it means)}                                                                                            \\
     \midrule
     Density                & 0.0516          & About 5\% of all possible connections exist, so the network is fairly sparse.                                                      \\
     Average Degree         & 3.0430          & On average, each member is connected to 3 others.                                                                                  \\
-    Average Path Length    & 3.012           & Any two members can reach each other in about 3 "hops" on average.                                                                 \\
-    Diameter               & 6               & The maximum separation between any two members is 6 "hops".                                                                        \\
+    Average Path Length (largest connected component)     & 3.012           & Any two members can reach each other in about 3 "hops" on average.                                                                 \\
+    Diameter (largest connected component)               & 6               & The maximum separation between any two members is 6 "hops".                                                                     \\
     Avg. Clustering Coeff. & 0.4347          & Members’ friends are often friends with each other—around 43\% of possible “triangles” are closed—showing moderate local cohesion. \\
     Modularity             & 0.5561          & The network splits into well-defined communities; there are many more connections within groups than between them.                 \\
     \bottomrule
@@ -111,9 +113,8 @@ The most densely connected "core" of the network is identified.  The analysis re
 \end{figure}
 
 \paragraph{Vulnerability Simulation}
-We simulated the removal of the identified leaders (Nodes 19, 63, 18),
-and recalculated cohesion metrics. This measure connects roles (leaders) to cohesion (robustness).
-The network density was reduced to \textbf{0.1014}, and the average path length increased to \textbf{3.1341} (an \textbf{4.05\%} increase), indicating marginally longer communication chains and reduced efficiency.
+Removing the three identified leaders (19, 63, 18) had a clear impact on the network structure. After their removal, the network broke into 18 components, and the largest connected part dropped from 65 to 24 nodes, showing a strong loss of cohesion. The density decreased from 0.0516 to \textbf{0.0288}, meaning fewer remaining connections overall. The average shortest path length increased from 3.0120 to \textbf{3.1341} (a \textbf{4.05\%} rise), indicating slightly longer communication chains among the surviving nodes.
+Overall, the simulation shows that leader nodes play an important structural role, and removing them makes the network significantly more fragmented and less efficient.
 \begin{figure} [H]
     \centering
     \includegraphics[width=1\linewidth]{images/italian_net_vuln.png}
