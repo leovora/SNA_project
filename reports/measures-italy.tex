@@ -3,8 +3,6 @@
 
 \subsubsection{Structural analysis}
 
-Using the Library Networkx \cite{networkx} from Python we studied different aspects of the italian gang network.
-
 In figure \ref{fig:italian_net} a plot of the network is shown where each node is colored according to its country label.
 
 \begin{figure} [H]
@@ -104,7 +102,7 @@ These measures identify the most important nodes, allowing us to define social r
 These measures test the power structure and resilience of the network.
 
 \paragraph{K-Core Decomposition}
-The most densely connected "core" of the network is identified.  The analysis reveals a main core with a \textbf{k-value of 3}. This core consists of \textbf{20 nodes} (out of 63). The nodes in this core are: \texttt{[4, 8, 11, 12, 13, 15, 18, 19, 21, 24, 31, 32, 39, 41, 44, 47, 58, 59, 63, 64]}.
+The most densely connected "core" of the network is identified.  The analysis reveals a main core with a \textbf{k-value of 3} that consists of \textbf{20 nodes} (out of 63). The nodes in this core are: \texttt{[4, 8, 11, 12, 13, 15, 18, 19, 21, 24, 31, 32, 39, 41, 44, 47, 58, 59, 63, 64]}.
 \begin{figure} [H]
     \centering
     \includegraphics[width=1\linewidth]{images/italian_network_core.png}
@@ -113,8 +111,8 @@ The most densely connected "core" of the network is identified.  The analysis re
 \end{figure}
 
 \paragraph{Vulnerability Simulation}
-Removing the three identified leaders (19, 63, 18) had a clear impact on the network structure. After their removal, the network broke into 18 components, and the largest connected part dropped from 65 to 24 nodes, showing a strong loss of cohesion. The density decreased from 0.0516 to \textbf{0.0288}, meaning fewer remaining connections overall. The average shortest path length increased from 3.0120 to \textbf{3.1341} (a \textbf{4.05\%} rise), indicating slightly longer communication chains among the surviving nodes.
-Overall, the simulation shows that leader nodes play an important structural role, and removing them makes the network significantly more fragmented and less efficient.
+Removing the three identified leaders (19, 63, 18) had a clear impact on the network structure. After their removal, the network broke into 18 components, and the largest connected part dropped from 65 to 24 nodes, showing a strong loss of cohesion. The density decreased from 0.0516 to \textbf{0.0288}. The average shortest path length increased from 3.0120 to \textbf{3.1341} (a \textbf{4.05\%} rise), indicating slightly longer communication chains among the surviving nodes.
+
 \begin{figure} [H]
     \centering
     \includegraphics[width=1\linewidth]{images/italian_net_vuln.png}
