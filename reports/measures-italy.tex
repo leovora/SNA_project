@@ -125,18 +125,14 @@ The \textbf{Italian gang network} is sparse but moderately cohesive, with clear 
 
 \subsubsection{Ethnicity analysis}
 
-The analysis of the Italian gang network shows a \textbf{moderate tendency toward ethnic homophily}, with an assortativity coefficient of 0.150. This value suggests that individuals show a slight preference for connecting with others sharing the same \textit{Birthplace}, though overall the network remains relatively integrated. \\
+The Italian gang network shows a \textbf{moderate level of ethnic homophily}, with an assortativity coefficient of 0.150. This indicates a slight preference for forming ties with individuals sharing the same \textit{Birthplace}, while the network as a whole remains well integrated.
 
-The \textbf{mixing matrix} confirms this trend: while several diagonal values
-(e.g., for groups 3, 4, and 5) are higher (indicating intra-group cohesion) many off-diagonal entries are also non-negligible. This demonstrates a considerable number of \textbf{cross-national connections}, supporting the idea of partial ethnic mixing.
-
+The \textbf{mixing matrix} supports this interpretation: diagonal values are relatively high for groups 3, 4, and 5, reflecting intra-group cohesion, but many off-diagonal values remain substantial, revealing frequent \textbf{cross-ethnic interactions}.
 \begin{table}[H]
     \centering
-    \caption{Mean centrality by Birthplace – Italian gang}
-    \label{tab:mixing_matrix_italy}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
         \hline
-          & 1     & 2     & 3     & 4     & 5     & 6     & 7     & 8     & 9     \\ \hline
+          & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
         1 & 0.018 & 0.000 & 0.031 & 0.004 & 0.004 & 0.000 & 0.022 & 0.009 & 0.000 \\
         2 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.004 \\
         3 & 0.031 & 0.000 & 0.096 & 0.053 & 0.031 & 0.000 & 0.061 & 0.004 & 0.004 \\
@@ -148,59 +144,53 @@ The \textbf{mixing matrix} confirms this trend: while several diagonal values
         9 & 0.000 & 0.004 & 0.004 & 0.004 & 0.009 & 0.000 & 0.000 & 0.000 & 0.000 \\
         \hline
     \end{tabular}
+    \caption{Mixing matrix (proportion of connections between Birthplace groups) – Italian gang}
+    \label{tab:mixing_matrix_italy}
 \end{table}
 
-When analyzing \textbf{centrality measures}, group 5 clearly stands out as the most central and structurally influential, with the highest mean degree (0.159), betweenness (0.144), and eigenvector centrality (0.233). Groups 3 and 9 also exhibit moderate centrality levels, suggesting participation in brokerage or connective roles. In contrast, groups such as 2, 6, and 7 show minimal centrality values, occupying peripheral positions within the network.
-Overall, influence appears somewhat concentrated but not monopolized by a single nationality. \\
-
+Analysis of \textbf{centrality} shows clear differences among groups. Group 5 emerges as the most central, with the highest degree (0.159), betweenness (0.144), and eigenvector value (0.233). Groups 3 and 9 also show moderate centrality, suggesting intermediate structural roles, while groups 2, 6, and 7 appear more peripheral.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{images/italian_centrality_by_birthplace.png}
-    \label{fig:placeholder}
 \end{figure}
 
-The \textbf{community analysis} identified five major communities.
-Most of these display mixed ethnic compositions, with only one cluster (community 4) being entirely dominated by two groups (1 and 3). The mean Shannon diversity index ($H = 1.174$) indicates high internal heterogeneity, suggesting that communities are composed of members from multiple national origins rather than segregated along ethnic lines.\\
+The \textbf{community analysis} identifies five communities with varying levels of diversity. Most are ethnically mixed, with the exception of community 4, dominated by groups 1 and 3. The mean Shannon index ($H = 1.174$) indicates \textbf{high community heterogeneity}.
 
-Furthermore, 64.91\% of all connections occur between individuals of different
-Birthplace categories, a clear indicator of \textbf{strong cross-ethnic integration}.
-This finding supports the interpretation that ethnic background is not a dominant organizing factor in the structure of the Italian gang. \\
+\medskip
 
-Subgraph analysis by \textit{Birthplace} reveals additional information:
+A significant proportion of ties (64.91\%) connect individuals from different \textit{Birthplace} categories, confirming a high degree of \textbf{cross-ethnic integration}. Thus, ethnic background does not represent a major organizational force within the network.
+
+Subgraph analysis highlights additional structural differences:
 \begin{itemize}
-    \item Group \textbf{4} (21 nodes, density = 0.124) forms the largest and most internally cohesive subcommunity.
-    \item Group \textbf{5}, although small (2 nodes), is fully interconnected (density = 1.000),
-          representing a tightly bonded dyad.
-    \item Other groups (6, 7, 8, 9) show limited or no internal links, implying
-          \textbf{dependence on inter-ethnic ties} for maintaining connectivity.
+    \item Group \textbf{4} forms the largest and most cohesive internal cluster (21 nodes, density = 0.124).
+    \item Group \textbf{5}, although consisting of only 2 members, is fully connected (density = 1.000).
+    \item Groups \textbf{6–9} show little to no internal connectivity, relying mainly on cross-group ties.
 \end{itemize}
 
 \begin{table}[H]
     \centering
+    \begin{tabular}{r r r r r}
+        \toprule
+        \textbf{Birthplace} & \textbf{Nodes} & \textbf{Edges} & \textbf{Density} & \textbf{Clustering} \\
+        \midrule
+        1 & 5  & 2  & 0.200 & 0.000 \\
+        2 & 1  & 0  & 0.000 & 0.000 \\
+        3 & 15 & 11 & 0.105 & 0.156 \\
+        4 & 21 & 26 & 0.124 & 0.294 \\
+        5 & 2  & 1  & 1.000 & 0.000 \\
+        6 & 1  & 0  & 0.000 & 0.000 \\
+        7 & 20 & 0  & 0.000 & 0.000 \\
+        8 & 1  & 0  & 0.000 & 0.000 \\
+        9 & 1  & 0  & 0.000 & 0.000 \\
+        \bottomrule
+    \end{tabular}
     \caption{Subgraph-level statistics by Birthplace – Italian gang}
     \label{tab:subgraph_italy}
-    \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        \textbf{Country} & \textbf{Nodes} & \textbf{Edges} & \textbf{Density} & \textbf{Clustering} \\ \hline
-        1                & 5              & 2              & 0.200            & 0.000               \\
-        2                & 1              & 0              & 0.000            & 0.000               \\
-        3                & 15             & 11             & 0.105            & 0.156               \\
-        4                & 21             & 26             & 0.124            & 0.294               \\
-        5                & 2              & 1              & 1.000            & 0.000               \\
-        6                & 1              & 0              & 0.000            & 0.000               \\
-        7                & 20             & 0              & 0.000            & 0.000               \\
-        8                & 1              & 0              & 0.000            & 0.000               \\
-        9                & 1              & 0              & 0.000            & 0.000               \\
-        \hline
-    \end{tabular}
 \end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{images/italian_subgraphs.png}
-    \label{fig:placeholder}
 \end{figure}
 
-In summary, the Italian gang exhibits \textbf{moderate homophily but high overall integration},
-with collaboration patterns largely transcending national divisions.
-Ethnicity appears to play a \textbf{secondary role} in shaping relational dynamics.
+In summary, the Italian gang shows \textbf{moderate homophily} but remains \textbf{highly integrated}. Most collaboration occurs across different national backgrounds, and ethnicity plays only a \textbf{secondary role} in shaping the network’s structure.

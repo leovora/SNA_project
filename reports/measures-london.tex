@@ -106,14 +106,12 @@ The \textbf{properties} are what we discovered: a "small-world" network (path le
 
 \subsubsection{Ethnicity analysis}
 
-The analysis of the London gang network shows a \textbf{weak but positive tendency toward ethnic homophily}, with an assortativity coefficient of 0.113. This indicates that individuals display a mild preference for forming ties with others sharing the same \textit{Birthplace}, although the overall network remains relatively integrated. \\
+The London gang network exhibits a \textbf{weak but positive tendency toward ethnic homophily}, reflected by an assortativity coefficient of 0.113. Although individuals show a mild preference for connecting with same-\textit{Birthplace} peers, the network remains largely integrated.
 
-The \textbf{mixing matrix} confirms this observation: diagonal values (particularly for groups 1 and 3) are slightly higher, indicating intra-group cohesion, while off-diagonal entries remain substantial. This balance highlights the presence
-of numerous \textbf{cross-ethnic connections} within the gang’s structure. \\
+The \textbf{mixing matrix} supports this interpretation: diagonal entries (especially for groups 1 and 3) are slightly higher, but substantial off-diagonal values reveal frequent \textbf{cross-ethnic connections}.
 
 \begin{table}[H]
     \centering
-    \caption{Mixing matrix (proportion of connections between Birthplace groups) – London gang}
     \label{tab:mixing_matrix_london}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
@@ -124,10 +122,10 @@ of numerous \textbf{cross-ethnic connections} within the gang’s structure. \\
         4 & 0.041 & 0.025 & 0.043 & 0.025 \\
         \hline
     \end{tabular}
+    \caption{Mixing matrix (proportion of connections between Birthplace groups) – London gang}
 \end{table}
 
-When analyzing \textbf{centrality measures}, groups 1 and 4 emerge as the most central and
-structurally influential, with the highest mean degrees (0.286 and 0.267 respectively) and eigenvector centralities (0.152 and 0.135). Group 2 follows closely, while group 3 (despite being the largest) exhibits the lowest centrality values, suggesting a more peripheral or clustered role. This pattern implies that influence and connectivity are distributed across multiple ethnic groups, rather than concentrated in a single one. \\
+Regarding \textbf{centrality}, groups 1 and 4 emerge as the most structurally prominent, showing the highest degree and eigenvector values (0.286/0.152 and 0.267/0.135). Group 2 follows with intermediate scores, while group 3—despite being the largest—displays the lowest centrality, suggesting a more peripheral or internally clustered role. Overall, influence is distributed across multiple ethnic groups rather than concentrated in one.
 
 \begin{figure}[H]
     \centering
@@ -135,12 +133,10 @@ structurally influential, with the highest mean degrees (0.286 and 0.267 respect
     \label{fig:london_centrality}
 \end{figure}
 
-The \textbf{community analysis} identified four main communities, each with different degrees of
-ethnic diversity. Community 0 displays a relatively balanced composition (1: 38\%, 2: 10\%, 3: 29\%, 4: 24\%), while community 1 is dominated by groups 2 and 3. Communities 2 and 3 are less diverse, with community 2 almost entirely composed of group 3 members. The mean Shannon diversity index ($H = 0.886$) indicates moderate internal diversity, slightly lower than in the Italian network. \\
+The \textbf{community analysis} identifies four communities with varying degrees of ethnic diversity. Community 0 shows a balanced mix, while community 1 is dominated by groups 2 and 3. Communities 2 and 3 are less diverse, particularly community 2, almost entirely composed of group 3 individuals. The mean Shannon index ($H = 0.886$) reflects \textbf{moderate diversity} overall.
 
 \begin{table}[H]
     \centering
-    \caption{Community composition by Birthplace – London gang}
     \label{tab:community_composition_london}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
@@ -151,25 +147,20 @@ ethnic diversity. Community 0 displays a relatively balanced composition (1: 38\
         3         & 0.00 & 0.33 & 0.67 & 0.00 \\
         \hline
     \end{tabular}
+    \caption{Community composition by Birthplace – London gang}
 \end{table}
 
-Furthermore, 64.44\% of all connections occur between individuals of different
-\textit{Birthplace} categories, demonstrating a high degree of cross-ethnic integration.
-As in the Italian case, national origin does not appear to be a key organizing principle in the network’s structure. \\
+A total of 64.44\% of edges link individuals from different \textit{Birthplace} groups, indicating \textbf{high cross-ethnic integration} and suggesting that national origin is not a primary organizing factor.
 
-Subgraph analysis by \textit{Birthplace} provides additional insight:
+Subgraph analysis offers further insight:
 \begin{itemize}
-    \item Groups \textbf{1} and \textbf{4} exhibit the highest internal density (0.530 and 0.533 respectively)
-          and clustering, indicating strong intra-group cohesion.
-    \item Group \textbf{3}, while the largest (24 nodes), has a lower internal density (0.167),
-          suggesting looser internal connectivity and a more outward orientation.
-    \item Group \textbf{2} shows intermediate density (0.348) and clustering, forming connections both
-          internally and across groups.
+    \item Groups \textbf{1} and \textbf{4} show the strongest internal cohesion (densities 0.530 and 0.533).
+    \item Group \textbf{3}, though the largest, has lower internal density (0.167), implying weaker internal connectivity.
+    \item Group \textbf{2} displays intermediate cohesion, linking both internally and externally.
 \end{itemize}
 
 \begin{table}[H]
     \centering
-    \caption{Subgraph-level statistics by Birthplace – London gang}
     \label{tab:subgraph_london}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
@@ -180,6 +171,7 @@ Subgraph analysis by \textit{Birthplace} provides additional insight:
         4          & 6     & 8     & 0.533   & 0.722      \\
         \hline
     \end{tabular}
+    \caption{Subgraph-level statistics by Birthplace – London gang}
 \end{table}
 
 \begin{figure}[H]
@@ -188,7 +180,4 @@ Subgraph analysis by \textit{Birthplace} provides additional insight:
     \label{fig:london_subgraphs}
 \end{figure}
 
-In summary, the London gang network displays slightly lower diversity but comparable integration when compared to the Italian case. While certain groups form cohesive internal clusters,
-the overall structure is characterized by extensive cross-ethnic linkage and
-distributed influence across national backgrounds.
-Ethnicity, therefore, plays only a minor role in shaping the gang’s internal connectivity patterns.
+In summary, the London gang network presents \textbf{moderate ethnic diversity} and \textbf{high levels of cross-ethnic integration}. Some Birthplace groups form cohesive internal clusters, but overall the structure remains highly interconnected across ethnic boundaries. Influence is distributed, and ethnicity plays only a limited role in shaping the network’s internal organization.
