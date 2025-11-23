@@ -39,10 +39,10 @@ For both the Italian and London gangs, we study the same network metrics and com
           \end{equation}
 
     \item \textbf{Modularity ($Q$)}: quantifies the presence of well-defined communities:
-          \begin{equation}
-              Q = \frac{1}{2m}\sum_{i,j}\left(A_{ij} - \frac{k_i k_j}{2m}\right)\delta(c_i, c_j)
+          \begin{equation}\label{eq:modularity}
+              Q = \frac{1}{2m}\sum_{ij}\left(A_{ij}-\frac{d_j d_i}{2m}\right)\delta(g_i, g_j)
           \end{equation}
-          where $\delta(c_i, c_j)=1$ if nodes $i$ and $j$ belong to the same community. High $Q$ indicates strong internal divisions or cliques.
+          where $m$ is the total number of edges, $A_{ij}$ is the adjacency matrix, $d$ represents node degrees, and $\delta(g_i, g_j)$ is the Kronecker delta (1 if nodes $i$ and $j$ share the same birthplace group, 0 otherwise). High $Q$ indicates strong internal divisions or cliques.
 \end{itemize}
 
 \subsection*{Centrality Metrics}
@@ -96,11 +96,7 @@ We also assess \textbf{network robustness} by comparing metrics (density, averag
 Finally, to explore how ethnic background shapes internal organization, we perform \textbf{attribute-based network analyses} based on the \textit{Birthplace} attribute.
 
 \begin{itemize}
-    \item \textbf{Assortativity coefficient ($r$)} and \textbf{mixing matrix}: measure homophily by birthplace.
-          \begin{equation}
-              r = \frac{\sum_i e_{ii} - \sum_i a_i b_i}{1 - \sum_i a_i b_i}
-          \end{equation}
-          where $e_{ij}$ is the fraction of edges linking group $i$ to $j$, and $a_i$, $b_i$ are the row and column sums of the mixing matrix.
+    \item \textbf{Assortativity (Modularity $Q$) and mixing matrix}: used to quantify the extent of homophily by \textit{Birthplace}. For unordered characteristics, assortativity is measured as the modularity $Q$ [\ref{eq:modularity}] indicating the extent to which similar nodes connect to each other.
 
     \item \textbf{Centrality by group}: comparing average degree, betweenness, and eigenvector centrality across ethnic categories reveals whether certain groups occupy more central positions.
 
