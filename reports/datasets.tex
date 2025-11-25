@@ -6,7 +6,25 @@
 % manipulate) the data and 2) to compute measures on the data?
 
 
-Our analysis uses two publicly available datasets from the UCINET Software project’s repository of social networks: the \textbf{London Gang Network} (54\,nodes) and the \textbf{Italian Gangs Network} (67\,nodes). The London dataset was accessed from the UCINET “Covert Networks” collection \cite{londonGangSite}; the Italian dataset was obtained from the same repository \cite{italianGangsSite}. Both include person–person adjacency matrices and accompanying node-attribute tables, and are fully digitised, requiring no manual transcription.
+Our analysis uses two publicly available datasets from the UCINET project: the
+\textbf{London Gang Network} (54 nodes) and the \textbf{Italian Gangs Network}
+(67 nodes) \cite{londonGangSite, italianGangsSite}. Both datasets provide
+1--mode person–person adjacency matrices together with node attributes, and are
+fully digitised.
+
+The \textbf{London} dataset consists of a 54$\times$54 undirected valued matrix.
+Nodes represent gang members, and edges encode the presence and strength of
+criminal or social relations (e.g.\ co-offending, spending time together,
+shared crew membership).
+
+The \textbf{Italian} dataset is a 67$\times$67 undirected adjacency matrix.
+Nodes correspond to individuals involved in mafia-related activities, while
+edges represent generic relational ties within the organisation (collaboration,
+interaction, or shared illicit activities).
+
+In both cases, nodes represent individuals and edges represent the social or
+criminal connections among them, forming the structural basis for our network
+analysis.
 
 \subsection{Digitisation and Data Handling}
 
