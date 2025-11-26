@@ -1,5 +1,7 @@
-\subsection{London gang}
-This section will report the results of the metrics mentioned in \ref{measures} regarding the London gang network 54 nodes, 315 edges.
+\subsection{London Gang Analysis}
+This section will report the results of the metrics introduced at the beginning of section \ref{measures}, with respect to the London gang network.
+\subsubsection{Structural analysis}
+In figure \ref{fig:london_net} a plot of the network is shown, where each node is colored according to its \textit{Birthplace} label.
 \begin{figure} [H]
     \centering
     \includegraphics[width=1\linewidth]{images/london_network.png}
@@ -7,7 +9,7 @@ This section will report the results of the metrics mentioned in \ref{measures} 
     \label{fig:london_net}
 \end{figure}
 
-\subsubsection{Macro-level Cohesion and Structure}
+\subsubsection*{Macro-level Cohesion and Structure}
 % The ‘X’ column expands to fill the space and allows text wrapping.
 \begin{tabularx}{\linewidth}{@{} l l X @{}}
     \toprule
@@ -22,7 +24,7 @@ This section will report the results of the metrics mentioned in \ref{measures} 
     \bottomrule
 \end{tabularx}
 
-\subsubsection{Micro-level Centrality and Social Roles}
+\subsubsection*{Micro-level Centrality and Social Roles}
 \paragraph{Leaders} The most influential, connected, and central members.
 \begin{table}[H] % Contenitore tabella
     \centering
@@ -71,7 +73,7 @@ This section will report the results of the metrics mentioned in \ref{measures} 
     \caption{Peripheral nodes (Degree $\le$ 0.0377)} \label{tab:peripheral}
 \end{table}
 
-\subsubsection{Hierarchy and Vulnerability}
+\subsubsection*{Hierarchy and Vulnerability}
 These measures test the power structure and resilience of the network.
 
 \paragraph{K-Core Decomposition}
@@ -92,11 +94,9 @@ We simulated the removal of the identified leaders (Nodes 1, 7, 12), representin
     \label{fig:london_net_vuln}
 \end{figure}
 
-\subsubsection{Synthesis: Connection Between Data, Measures, and Properties}
+Overall, the London network turns out to be a \textbf{properties} "small-world" (path length 2.05), highly cohesive (density 0.22), locally clustered (clustering 0.63), but undivided (modularity 0.26) network. It possesses a clear hierarchy (k-core 11) and defined social roles (Leaders 1, 7, 12), all of which combine to make it exceptionally \textbf{robust}.
 
-The \textbf{properties} are what we discovered: a "small-world" network (path length 2.05), highly cohesive (density 0.22), locally clustered (clustering 0.63), but undivided (modularity 0.26). It possesses a clear hierarchy (k-core 11) and defined social roles (Leaders 1, 7, 12), all of which combine to make it exceptionally \textbf{robust}.
-
-\subsubsection{Ethnicity analysis}
+\subsubsection{Ethnicity and Community Analysis}
 
 The London gang network exhibits a \textbf{weak but positive tendency toward ethnic homophily}, reflected by an assortativity coefficient of 0.113. Although individuals show a mild preference for connecting with same-\textit{Birthplace} peers, the network remains largely integrated.
 
@@ -125,7 +125,7 @@ Regarding \textbf{centrality}, groups 1 and 4 emerge as the most structurally pr
     \label{fig:london_centrality}
 \end{figure}
 
-The \textbf{community analysis} identifies four communities with varying degrees of ethnic diversity. Community 0 shows a balanced mix, while community 1 is dominated by groups 2 and 3. Communities 2 and 3 are less diverse, particularly community 2, almost entirely composed of group 3 individuals. The mean Shannon index ($H = 0.886$) reflects \textbf{moderate diversity} overall.
+The \textbf{community analysis} identifies four communities with varying degrees of ethnic diversity. Community 0 shows a balanced mix, while community 1 is dominated by ethnic groups 2 and 3. Communities 2 and 3 are less diverse, particularly community 2, almost entirely composed of group 3 individuals. The mean Shannon index ($H = 0.886$) reflects \textbf{moderate diversity} overall.
 
 \begin{table}[H]
     \centering

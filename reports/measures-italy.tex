@@ -1,9 +1,9 @@
 
-\subsection{Italian gang}
-
+\subsection{Italian Gang Analysis}
+This section will report the results of the metrics introduced at the beginning of section \ref{measures}, with respect to the Italian gang network.
 \subsubsection{Structural analysis}
 
-In figure \ref{fig:italian_net} a plot of the network is shown where each node is colored according to its country label.
+In figure \ref{fig:italian_net} a plot of the network is shown, where each node is colored according to its \textit{Country} label.
 
 \begin{figure} [H]
     \centering
@@ -11,9 +11,9 @@ In figure \ref{fig:italian_net} a plot of the network is shown where each node i
     \caption{Italian Network graph visualization. Each node is colored according to its country label}
     \label{fig:italian_net}
 \end{figure}
-\subsubsection{Macro-level Cohesion and Structure}
+\subsubsection*{Macro-level Cohesion and Structure}
 
-As the italian network is not connected and diameter and average path length are not defined for not connected networks, we instead calculate these metrics for the largest connected component, which has 65 nodes (out of 67).
+As the Italian network is not connected and diameter and average path length are not defined for not connected networks, we instead calculate these metrics for the largest connected component, which has 65 nodes (out of 67).
 
 \begin{tabularx}{\linewidth}{@{} l l >{\raggedright\arraybackslash}X @{}}
     \toprule
@@ -27,7 +27,7 @@ As the italian network is not connected and diameter and average path length are
     Modularity             & 0.5561          \\
     \bottomrule
 \end{tabularx}
-\subsubsection{Micro-level Centrality and Social Roles}
+\subsubsection*{Micro-level Centrality and Social Roles}
 These measures identify the most important nodes, allowing us to define social roles.
 
 \paragraph{Leaders} The most influential, connected, and central members.
@@ -98,7 +98,7 @@ These measures identify the most important nodes, allowing us to define social r
     \caption{Peripheral nodes (Degree $\le$ 0.0152)} \label{tab:peripheral}
 \end{table}
 
-\subsubsection{Hierarchy and Vulnerability}
+\subsubsection*{Hierarchy and Vulnerability}
 These measures test the power structure and resilience of the network.
 
 \paragraph{K-Core Decomposition}
@@ -120,10 +120,10 @@ Removing the three identified leaders (19, 63, 18) had a clear impact on the net
     \label{fig:italian_net_vuln}
 \end{figure}
 
-\subsubsection{Synthesis: Connection Between Data, Measures, and Properties}
-The \textbf{Italian gang network} is sparse but moderately cohesive, with clear community divisions and a defined inner core (\textbf{k = 3}). Leadership is concentrated in a few nodes (19, 63, 18), supported by brokers who link subgroups. When these leaders are removed, the network becomes \textbf{fragmented}, revealing limited redundancy and a \textbf{moderate structural vulnerability} despite its local cohesion.
 
-\subsubsection{Ethnicity analysis}
+In summary, the \textbf{Italian gang network} is sparse but moderately cohesive, with clear community divisions and a defined inner core (\textbf{k = 3}). Leadership is concentrated in a few nodes (19, 63, 18), supported by brokers who link subgroups. When these leaders are removed, the network becomes \textbf{fragmented}, revealing limited redundancy and a \textbf{moderate structural vulnerability} despite its local cohesion.
+
+\subsubsection{Ethnicity and Community Analysis}
 
 The Italian gang network shows a \textbf{moderate level of ethnic homophily}, with an assortativity coefficient of 0.150. This indicates a slight preference for forming ties with individuals sharing the same \textit{Birthplace}, while the network as a whole remains well integrated.
 
