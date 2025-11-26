@@ -24,6 +24,9 @@ For both the Italian and London gangs, we study the same network metrics and com
 
     \item \textbf{Network diameter ($D_{max}$)} and \textbf{average path length ($\ell$)}: respectively, the maximum and the mean of the shortest path distances between all node pairs.
           \begin{equation}
+              D_{max} = \max_{i,j} d_{ij}
+          \end{equation}
+          \begin{equation}
               \ell = \frac{1}{n(n-1)} \sum_{i \neq j} d_{ij}
           \end{equation}
           They describe the efficiency of information or order transmission within the network.
