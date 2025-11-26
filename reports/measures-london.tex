@@ -11,18 +11,21 @@ In figure \ref{fig:london_net} a plot of the network is shown, where each node i
 
 \subsubsection*{Macro-level Cohesion and Structure}
 % The ‘X’ column expands to fill the space and allows text wrapping.
-\begin{tabularx}{\linewidth}{@{} l l X @{}}
-    \toprule
-    \textbf{Metric}        & \textbf{Result} & \textbf{Interpretation (What it means)}                                                       \\
-    \midrule
-    Density                & 0.2201          & The network is extremely dense and highly interconnected.                                     \\
-    Average Degree         & 11.67           & On average, each member is connected to almost 12 others.                                     \\
-    Average Path Length    & 2.05            & Any two members can reach each other in just 2 "hops" on average.                             \\
-    Diameter               & 4               & The maximum separation between any two members is 4 "hops".                                   \\
-    Avg. Clustering Coeff. & 0.6331          & The network is rich in tightly-knit local subgroups (cliques).                                \\
-    Modularity             & 0.2665          & The network operates as a single, cohesive bloc; it is not fragmented into separate factions. \\
-    \bottomrule
-\end{tabularx}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l r}
+        \toprule
+        \textbf{Metric}        & \textbf{Result} \\
+        \midrule
+        Density                & 0.2201          \\
+        Average Degree         & 11.67           \\
+        Average Path Length    & 2.05            \\
+        Diameter               & 4               \\
+        Avg. Clustering Coeff. & 0.6331          \\
+        Modularity             & 0.2665          \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \subsubsection*{Micro-level Centrality and Social Roles}
 \paragraph{Leaders} The most influential, connected, and central members.

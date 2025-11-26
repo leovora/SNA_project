@@ -1,15 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'sna_project.blg'
-[73] biber-MSWIN64:342> INFO - === 
-[99] Biber.pm:421> INFO - Reading 'sna_project.bcf'
-[176] Biber.pm:1002> INFO - Found 17 citekeys in bib section 0
-[185] Biber.pm:4487> INFO - Processing section 0
-[193] Biber.pm:4678> INFO - Looking for bibtex file 'articles.bib' for section 0
-[224] bibtex.pm:1713> INFO - LaTeX decoding ...
-[236] bibtex.pm:1519> INFO - Found BibTeX data source 'articles.bib'
-[301] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[301] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[301] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[302] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[311] bbl.pm:676> INFO - Writing 'sna_project.bbl' with encoding 'UTF-8'
-[316] bbl.pm:779> INFO - Output to sna_project.bbl
+[143] biber-MSWIN64:342> INFO - === 
+[212] Biber.pm:421> INFO - Reading 'sna_project.bcf'
+[283] Biber.pm:1002> INFO - Found 17 citekeys in bib section 0
+[292] Biber.pm:4487> INFO - Processing section 0
+[310] Biber.pm:4678> INFO - Looking for bibtex file 'articles.bib' for section 0
+[342] bibtex.pm:1713> INFO - LaTeX decoding ...
+[361] bibtex.pm:1519> INFO - Found BibTeX data source 'articles.bib'
+[453] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[453] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[453] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[453] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[463] bbl.pm:676> INFO - Writing 'sna_project.bbl' with encoding 'UTF-8'
+[467] bbl.pm:779> INFO - Output to sna_project.bbl
