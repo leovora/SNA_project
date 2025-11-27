@@ -27,7 +27,7 @@ The reliability of this study (the ability for another researcher to reproduce t
 
     \item \textbf{Open-Source, Deterministic Tools:} The entire analysis was conducted using open-source Python libraries (\texttt{pandas} and \texttt{NetworkX}). The functions used for calculating measures (\texttt{nx.density}, \texttt{nx.betweenness\_centrality}, etc.) are deterministic. Given the same input graph, they will produce the identical output every time.
 
-    \item \textbf{Transparent Workflow:} The data treatment was minimal and explicit: loading the CSV via \texttt{pandas}, handling indices, converting it to a \texttt{NetworkX} graph, and applying specific functions. This step-by-step process can be scripted and shared, ensuring perfect reproducibility.
+    \item \textbf{Transparent Workflow:} The data treatment was minimal and explicit: loading the CSV via \texttt{pandas}, handling indices, converting it to a \texttt{NetworkX} graph, and applying specific functions. The entire workflow is scripted and publicly accessible \cite{publicRepo}, ensuring full reproducibility.
 \end{itemize}
 
 Overall, while the datasets provide only partial depictions of real-world social structures, the analytical process applied to them is transparent, stable, and highly reproducible.

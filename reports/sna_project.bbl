@@ -48,6 +48,28 @@
       \field{pages}{143\bibrangedash 169}
       \range{pages}{27}
     \endentry
+    \entry{publicRepo}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=e6d7388942e68006ca9b1f3b1277d3b8}{%
+           family={{Algeri, Nicolescu, Nunziati, Pimenta, Vorabbi}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e6d7388942e68006ca9b1f3b1277d3b8}
+      \strng{fullhash}{e6d7388942e68006ca9b1f3b1277d3b8}
+      \strng{fullhashraw}{e6d7388942e68006ca9b1f3b1277d3b8}
+      \strng{bibnamehash}{e6d7388942e68006ca9b1f3b1277d3b8}
+      \strng{authorbibnamehash}{e6d7388942e68006ca9b1f3b1277d3b8}
+      \strng{authornamehash}{e6d7388942e68006ca9b1f3b1277d3b8}
+      \strng{authorfullhash}{e6d7388942e68006ca9b1f3b1277d3b8}
+      \strng{authorfullhashraw}{e6d7388942e68006ca9b1f3b1277d3b8}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/leovora/SNA_project}}
+      \field{title}{GitHub "SNA\_project" repository --- github.com}
+      \field{year}{2025}
+    \endentry
     \entry{alonso2004racialized}{article}{}{}
       \name{author}{1}{}{%
         {{hash=7ee9e3b8b0b23c71b3086356a5ad6479}{%

@@ -2394,9 +2394,10 @@
     <bcf:citekey order="18" intorder="2">italianGangsSite</bcf:citekey>
     <bcf:citekey order="19" intorder="1">londonGangSite</bcf:citekey>
     <bcf:citekey order="20" intorder="1">italianGangsSite</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">adamson2017defensive</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">alonso2004racialized</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">freng2007race</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">publicRepo</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">adamson2017defensive</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">alonso2004racialized</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">freng2007race</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
