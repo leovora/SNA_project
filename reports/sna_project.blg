@@ -1,15 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'sna_project.blg'
-[87] biber:342> INFO - === Thu Nov 27, 2025, 18:52:50
-[100] Biber.pm:421> INFO - Reading 'sna_project.bcf'
-[157] Biber.pm:1002> INFO - Found 17 citekeys in bib section 0
-[168] Biber.pm:4487> INFO - Processing section 0
-[175] Biber.pm:4678> INFO - Looking for bibtex file 'articles.bib' for section 0
-[176] bibtex.pm:1713> INFO - LaTeX decoding ...
-[189] bibtex.pm:1519> INFO - Found BibTeX data source 'articles.bib'
-[291] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[291] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[291] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[291] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[303] bbl.pm:676> INFO - Writing 'sna_project.bbl' with encoding 'UTF-8'
-[308] bbl.pm:779> INFO - Output to sna_project.bbl
+[61] biber:342> INFO - === Thu Nov 27, 2025, 19:34:32
+[75] Biber.pm:421> INFO - Reading 'sna_project.bcf'
+[137] Biber.pm:1002> INFO - Found 17 citekeys in bib section 0
+[147] Biber.pm:4487> INFO - Processing section 0
+[155] Biber.pm:4678> INFO - Looking for bibtex file 'articles.bib' for section 0
+[156] bibtex.pm:1713> INFO - LaTeX decoding ...
+[170] bibtex.pm:1519> INFO - Found BibTeX data source 'articles.bib'
+[268] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[268] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[268] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[268] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[281] bbl.pm:676> INFO - Writing 'sna_project.bbl' with encoding 'UTF-8'
+[286] bbl.pm:779> INFO - Output to sna_project.bbl
