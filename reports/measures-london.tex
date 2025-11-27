@@ -11,23 +11,26 @@ In figure \ref{fig:london_net} a plot of the network is shown, where each node i
 
 \subsubsection*{Macro-level Cohesion and Structure}
 % The ‘X’ column expands to fill the space and allows text wrapping.
-\begin{table}[H]
-    \centering
-    \begin{tabular}{l r}
-        \toprule
-        \textbf{Metric}        & \textbf{Result} \\
-        \midrule
-        Density                & 0.2201          \\
+The following table reports the values of the structural metrics for the London Network.\\
+
+
+\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X @{}}
+    \toprule
+\textbf{Metric}        & \textbf{Result}                                                                               \\
+    \midrule
+    Density                & 0.2201          \\
         Average Degree         & 11.67           \\
         Average Path Length    & 2.05            \\
         Diameter               & 4               \\
-        Avg. Clustering Coeff. & 0.6331          \\
+        Avgerage Clustering Coefficient & 0.6331          \\
         Modularity             & 0.2665          \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+    \bottomrule
+\end{tabularx}
+
+
 
 \subsubsection*{Micro-level Centrality and Social Roles}
+The following tables illustrate which nodes occupy the social roles of \textit{Leaders}, \textit{Brokers} and \textit{Peripheral Members}, based on their centrality metric values, which are also reported in the tables.
 \paragraph{Leaders} The most influential, connected, and central members.
 \begin{table}[H] % Contenitore tabella
     \centering
@@ -97,7 +100,7 @@ We simulated the removal of the identified leaders (Nodes 1, 7, 12), representin
     \label{fig:london_net_vuln}
 \end{figure}
 
-Overall, the London network turns out to be a \textbf{properties} "small-world" (path length 2.05), highly cohesive (density 0.22), locally clustered (clustering 0.63), but undivided (modularity 0.26) network. It possesses a clear hierarchy (k-core 11) and defined social roles (Leaders 1, 7, 12), all of which combine to make it exceptionally \textbf{robust}.
+Overall, the London network turns out to be a "small-world" (path length 2.05), highly cohesive (density 0.22), locally clustered (clustering 0.63), but undivided (modularity 0.26) network. It possesses a clear hierarchy (k-core 11) and defined social roles (Leaders 1, 7, 12), all of which combine to make it exceptionally \textbf{robust}.
 
 \subsubsection{Ethnicity and Community Analysis}
 
