@@ -10,17 +10,17 @@ For both the Italian and London gangs, we study the same network metrics and com
 \subsection*{General Structural Metrics}
 
 \begin{itemize}
-    \item \textbf{Density ($D$)}: measures how many ties exist in the network compared to the maximum possible number.
+    \item \textbf{Density ($D$)}: it measures the fraction of all possible edges in the graph that actually exist.
           \begin{equation}
               D = \frac{2m}{n(n-1)}
           \end{equation}
-          where $m$ is the number of existing edges and $n$ the number of nodes. High density indicates strong cohesion and low vulnerability to node removal.
+          where $m$ is the number of existing edges and $n$ the number of nodes. In our networks, density reflects how globally interconnected the criminal gang is. High values of density indicate that overall, criminals maintain many direct relationships with other members.
 
     \item \textbf{Average degree ($\langle k \rangle$)}: the mean number of connections per node.
           \begin{equation}
               \langle k \rangle = \frac{1}{n}\sum_{i=1}^{n} k_i = \frac{2m}{n}
           \end{equation}
-          It represents member activity and overall engagement.
+          In our networks, it measures the average number of relationships that criminals maintain, capturing their social activity and exposure.
 
     \item \textbf{Network diameter ($D_{max}$)} and \textbf{average path length ($\ell$)}: respectively, the maximum and the mean of the shortest path distances between all node pairs.
           \begin{equation}
@@ -29,7 +29,7 @@ For both the Italian and London gangs, we study the same network metrics and com
           \begin{equation}
               \ell = \frac{1}{n(n-1)} \sum_{i \neq j} d_{ij}
           \end{equation}
-          They describe the efficiency of information or order transmission within the network.
+          In our networks, these two measures offer insights into the communication distances between criminals and how efficiently information can propagate through them.
 
     \item \textbf{Clustering coefficient ($C$)}: expresses the probability that two neighbors of a node are connected, revealing local cohesion or closed ``cells''.
           For node $i$:
@@ -40,12 +40,13 @@ For both the Italian and London gangs, we study the same network metrics and com
           \begin{equation}
               C = \frac{1}{n} \sum_{i=1}^{n} C_i
           \end{equation}
+          In our networks, it measures the cohesivenes of local operational cells formed by interconnected criminals.
 
     \item \textbf{Modularity ($Q$)}: quantifies the presence of well-defined communities:
           \begin{equation}\label{eq:modularity}
               Q = \frac{1}{2m}\sum_{ij}\left(A_{ij}-\frac{d_j d_i}{2m}\right)\delta(g_i, g_j)
           \end{equation}
-          where $m$ is the total number of edges, $A_{ij}$ is the adjacency matrix, $d$ represents node degrees, and $\delta(g_i, g_j)$ is the Kronecker delta (1 if nodes $i$ and $j$ share the same birthplace group, 0 otherwise). High $Q$ indicates strong internal divisions or cliques.
+          where $m$ is the total number of edges, $A_{ij}$ is the adjacency matrix, $d$ represents node degrees, and $\delta(g_i, g_j)$ is the Kronecker delta (1 if nodes $i$ and $j$ share the same birthplace group, 0 otherwise). In our networks, it captures the extent to which criminals tend to organize themselves into distinct subgroups with limited interaction between them.
 \end{itemize}
 
 \subsection*{Centrality Metrics}
@@ -57,25 +58,25 @@ We also compute \textbf{centrality metrics}, which identify key actors based on 
           \begin{equation}
               C_D(i) = k_i
           \end{equation}
-          It reveals the most active or visible members.
+          In our networks, it reveals the most active or influential criminals, based on the number of relationships with other members.
 
     \item \textbf{Betweenness centrality ($C_B(i)$)}: measures how often a node lies on the shortest paths between others.
           \begin{equation}
               C_B(i) = \sum_{s \neq i \neq d} \frac{\sigma_{sd}(i)}{\sigma_{sd}}
           \end{equation}
-          where $\sigma_{sd}$ is the number of shortest paths between $s$ and $d$, and $\sigma_{sd}(i)$ those passing through $i$. It highlights brokers or gatekeepers.
+          where $\sigma_{sd}$ is the number of shortest paths between $s$ and $d$, and $\sigma_{sd}(i)$ those passing through $i$. In our networks, it highlights how much criminals can act as brokers or gatekeepers.
 
     \item \textbf{Closeness centrality ($C_C(i)$)}: reciprocal of the mean distance from a node to all others.
           \begin{equation}
               C_C(i) = \frac{n-1}{\sum_{j\neq i} d_{ij}}
           \end{equation}
-          Nodes with high $C_C$ can quickly disseminate information.
+          In our networks, this measure offers insight into how efficiently a criminal can reach, or be reached by, the rest of the gang.
 
     \item \textbf{Eigenvector centrality ($C_E(i)$)}: assigns importance based on being connected to other important nodes.
           \begin{equation}
               C_E(i) = \frac{1}{\kappa}\sum_{j=1}^{n} A_{ij} C_E(j)
           \end{equation}
-          where $\kappa$ is the largest eigenvalue of the adjacency matrix $A$. It identifies leaders recognized by other influential members.
+          where $\kappa$ is the largest eigenvalue of the adjacency matrix $A$. It identifies leaders recognized by other influential members and, in our networks, it measures how embedded a criminal is within the main core structures of the organization.
 \end{itemize}
 
 \subsection*{Roles and Network Hierarchy}
